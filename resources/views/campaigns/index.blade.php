@@ -117,7 +117,7 @@
                                         <td>
                                     @endif
                                     <td>
-                                        @if( $campaign->status != 'D')
+                                        @if( $campaign->status !== 'D')
                                             @if( $campaign->status == 'W')
                                                 AGUARDANDO APROVAÇÃO
                                             @elseif( $campaign->status == 'S')

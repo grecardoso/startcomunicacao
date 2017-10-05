@@ -1,4 +1,4 @@
-function approveCampaign( id ) {
+function denieCampaign( id ) {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
