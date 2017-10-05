@@ -187,11 +187,17 @@
                                                         <p>{{ $campaign->campaign_file->extension() }}</p>
                                                         <strong>Tamanho:</strong>
                                                         <p>{{ $campaign->campaign_file->size() }}</p>
-                                                    </p>
                                                     </li>
                                                 @endif
                                             @else
-
+                                                <li class="list-group-item">
+                                                    <strong>Arquivo:</strong>
+                                                    <p>{{ $campaign->campaign_file->name }}</p>
+                                                    <strong>Extensão:</strong>
+                                                    <p>{{ $campaign->campaign_file->extension() }}</p>
+                                                    <strong>Tamanho:</strong>
+                                                    <p>{{ $campaign->campaign_file->size() }}</p>
+                                                </li>
                                             @endif
                                         </ul>
                                     </td>
