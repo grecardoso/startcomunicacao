@@ -17,9 +17,9 @@ Route::get('/', function() {
     return redirect()->route('home');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['auth', 'auth.approved']], function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+    
     /**
     * Users Routes
     */
@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth']], function() {
 
         Route::resource('users', 'UsersController')->only(['index', 'update', 'destroy', 'store']);
         Route::resource('reports', 'ReportsController')->only(['index', 'store', 'destroy']);
+        Route::resource('messages', 'MessagesControler')->only(['index', 'store', 'destroy']);
         Route::get('/profile', 'UsersController@profile')->name('user.profile');
         Route::get('/reports/{id}/download', 'ReportsController@download')->name('report.download');
     });
@@ -72,9 +73,6 @@ Route::group(['middleware' => ['auth']], function() {
         });
 
         Route::prefix('campaigns')->group(function () {
-            Route::prefix('number-lists')->group(function () {
-                Route::get('/{id}', 'RestCampaignsNumberLists@show');
-            });
             Route::post('/{id}/approve', 'RestCampaignsController@approveCampaign');
             Route::post('/{id}/denie', 'RestCampaignsController@denieCampaign');
             Route::post('/{id}/complete', 'RestCampaignsController@completeCampaign');
