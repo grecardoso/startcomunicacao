@@ -3,7 +3,9 @@
 namespace Hermes\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Hermes\Http\Controllers\Controller;
+use Hermes\Mail\WelcomeNewCustomer;
 
 use Hermes\User;
 
@@ -42,6 +44,10 @@ class UsersController extends Controller
         $user->status   = $status;
 
         if ($user->save()) {
+
+            // enviando email
+            Mail::to( $user->email )->send( new WelcomeNewCustomer( $user->name, $user->email ) );
+
             return redirect()->route('users.index')->with([
                 'msg'    => "Usuário $user->name cadastrado com sucesso",
                 'status' => 'success'

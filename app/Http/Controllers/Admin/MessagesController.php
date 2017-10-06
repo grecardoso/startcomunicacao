@@ -10,6 +10,9 @@ use Hermes\User;
 
 class MessagesController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index () {
         $messages = Message::all();
         $customers = User::where([
@@ -23,8 +26,15 @@ class MessagesController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request) {
-        //return $request->all();
+
+        /**
+         * TODO: Disparar email para 'aviso de mensagem administrativa para usuário cliente'
+         */
         $message = Message::create( $request->all() );
         if ($message->save()) {
             return redirect()->route('messages.index')->with([
@@ -39,6 +49,10 @@ class MessagesController extends Controller
         }
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delete($id) {
         $message = Message::findOrFail($id);
         if ($message->delete()) {

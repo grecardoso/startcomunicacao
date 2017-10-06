@@ -12,6 +12,10 @@ use Hermes\User;
 
 class ReportsController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(Request $request) {
         if ($request->user()->category === 'ADMIN') {
             $reports = Report::orderBy('id', 'desc')->get();
@@ -31,7 +35,16 @@ class ReportsController extends Controller
         }
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request) {
+
+        /**
+         * TODO: Disparar email para 'aviso de mensagem administrativa para usuário cliente'
+         */
+
         $user_id = $request->input('user_id');
         $campaign_id = $request->input('campaign_id');
         $name = $request->input('name');
@@ -51,6 +64,10 @@ class ReportsController extends Controller
         }
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id) {
         $report = Report::findOrFail( $id );
         
@@ -67,6 +84,10 @@ class ReportsController extends Controller
 
     }
 
+    /**
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
     public function download($id) {
         $report = Report::findOrFail( $id );
 

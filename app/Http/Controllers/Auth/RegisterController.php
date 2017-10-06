@@ -5,7 +5,11 @@ namespace Hermes\Http\Controllers\Auth;
 use Hermes\User;
 use Hermes\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
+use Illuminate\Support\Facades\Mail;
+use Hermes\Mail\WelcomeNewCustomer;
 
 class RegisterController extends Controller
 {
@@ -62,10 +66,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        if ( $user->save() ) {
+            // enviando email
+            Mail::to( $user->email )->send( new WelcomeNewCustomer( $user->name, $user->email ) );
+        }
+
+        return $user;
     }
 }
