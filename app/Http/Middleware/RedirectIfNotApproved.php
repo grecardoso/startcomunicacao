@@ -22,13 +22,13 @@ class RedirectIfNotApproved
             $email = $request->user()->email;
 
             if ( $request->user()->status === 'W' ) {
-                $msg = "Usuário aguardando aprovação pelos administradores.";
+                $msg = "Usuário $email aguardando aprovação pelos administradores.";
             } else {
-                $msg = "Usuário com acesso bloqueado. Contate o suporte.";
+                $msg = "Usuário $email com acesso bloqueado. Contate o suporte.";
             }
 
             Auth::logout();
-            return redirect('/')->with([
+            return redirect('/login')->with([
                 'msg' => $msg,
                 'status' => $status
             ]);
