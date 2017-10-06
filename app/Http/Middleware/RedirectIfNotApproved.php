@@ -17,8 +17,20 @@ class RedirectIfNotApproved
     public function handle($request, Closure $next)
     {
         if ( ($request->user()->status === 'W') || ($request->user()->status === 'D') ) {
+            $status = $request->user()->status === 'W' ? 'warning' : 'danger';
+            $msg = "";
+            
+            if ( $request->user()->status === 'W' ) {
+                $msg = "Usuário aguardando aprovação pelos administradores.";
+            } else {
+                $msg = "Usuário com acesso bloqueado. Contate o suporte.";
+            }
+
             Auth::logout();
-            return redirect('/');
+            return redirect('/')->with([
+                'msg' => $msg,
+                'status' => $status
+            ]);
         }
 
         return $next($request);

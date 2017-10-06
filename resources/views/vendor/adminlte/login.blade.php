@@ -15,6 +15,21 @@
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
+            @if ( session('msg') !== null )
+                @if ( session('status') === 'warning')
+                    <div class="alert alert-success alert-dismissible">
+                        <button  class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-check"></i> Aviso!</h4>
+                        {{ session('msg') }}
+                    </div>
+                @else
+                    <div class="alert alert-danger alert-dismissible">
+                        <button  class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                        {{ session('msg') }}
+                    </div>
+                @endif
+            @endif
             <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
             <form action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
                 {!! csrf_field() !!}
