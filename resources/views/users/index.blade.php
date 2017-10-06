@@ -48,6 +48,9 @@
                     <table id="users-table" class="table table-striped table-hover">
                         <thead>
                             <tr>
+                                @if( (Auth::user()->category === 'ADMIN') )
+                                    <td></td>
+                                @endif
                                 <th>Status</th>
                                 <th>Nome</th>
                                 <th>Email</th>
@@ -59,6 +62,18 @@
                         <tbody>
                             @foreach($users as $user)
                                 <tr>
+                                    @if( (Auth::user()->category === 'ADMIN') && ($user->status === 'W') )
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-danger" onclick="changeUserStatus(false, {{ $user->id }})">
+                                                <i class="fa fa-fw fa-money"></i> negar
+                                            </button>
+                                            <button type="button" class="btn btn-xs btn-success" onclick="changeUserStatus(true, {{ $user->id }})">
+                                                <i class="fa fa-fw fa-money"></i> aprovar
+                                            </button>
+                                        </td>
+                                    @else
+                                        <td></td>
+                                    @endif
                                     <td>
                                         @if( $user->status != 'W' )
                                             @if( $user->status == 'A' )
@@ -119,6 +134,10 @@
     <form id="delete-users-form" method="POST">
         {{ csrf_field() }}
         {{ method_field('DELETE') }}
+    </form>
+
+    <form id="changeStatus-users-form" method="POST">
+        {{ csrf_field() }}
     </form>
 
     @include('users.includes.add_form')

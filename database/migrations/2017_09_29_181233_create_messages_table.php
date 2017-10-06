@@ -20,6 +20,8 @@ class CreateMessagesTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->boolean('status')->default(true);
+            $table->boolean('status_to')->default(true);
+            $table->boolean('status_from')->default(true);
             $table->timestamps();
         });
     }

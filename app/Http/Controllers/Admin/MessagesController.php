@@ -8,7 +8,7 @@ use Hermes\Http\Controllers\Controller;
 use Hermes\Models\Message;
 use Hermes\User;
 
-class MessagesControler extends Controller
+class MessagesController extends Controller
 {
     public function index () {
         $messages = Message::all();

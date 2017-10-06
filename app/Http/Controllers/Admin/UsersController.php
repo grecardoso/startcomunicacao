@@ -99,4 +99,16 @@ class UsersController extends Controller
             ]);
         }
     }
+
+    public function approve(User $user) {
+        $user->status = 'A';
+        $user->save();
+        return redirect()->route('users.index');
+    }
+
+    public function denie(User $user) {
+        $user->status = 'D';
+        $user->save();
+        return redirect()->route('users.index');
+    }
 }
