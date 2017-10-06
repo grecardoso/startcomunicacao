@@ -63,7 +63,7 @@
                             @foreach($users as $user)
                                 <tr>
                                     @if( (Auth::user()->category === 'ADMIN') && ($user->status === 'W') )
-                                        <td>
+                                        <td class="text-left">
                                             <button type="button" class="btn btn-xs btn-danger" onclick="changeUserStatus(false, {{ $user->id }})">
                                                 <i class="fa fa-fw fa-money"></i> negar
                                             </button>
