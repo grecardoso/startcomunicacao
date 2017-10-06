@@ -17,7 +17,7 @@
         <div class="login-box-body">
             @if ( session('msg') !== null )
                 @if ( session('status') === 'warning')
-                    <div class="alert alert-success alert-dismissible">
+                    <div class="alert alert-warning alert-dismissible">
                         <button  class="close" data-dismiss="alert" aria-hidden="true">×</button>
                         <h4><i class="icon fa fa-check"></i> Aviso!</h4>
                         {{ session('msg') }}

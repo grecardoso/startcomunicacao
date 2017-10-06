@@ -19,11 +19,12 @@ class RedirectIfNotApproved
         if ( ($request->user()->status === 'W') || ($request->user()->status === 'D') ) {
             $status = $request->user()->status === 'W' ? 'warning' : 'danger';
             $msg = "";
-            
+            $email = $request->user()->email;
+
             if ( $request->user()->status === 'W' ) {
-                $msg = "Usuário aguardando aprovação pelos administradores.";
+                $msg = "Usuário $email aguardando aprovação pelos administradores.";
             } else {
-                $msg = "Usuário com acesso bloqueado. Contate o suporte.";
+                $msg = "Usuário $email com acesso bloqueado. Contate o suporte.";
             }
 
             Auth::logout();
