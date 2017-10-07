@@ -7,10 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-use Illuminate\Support\Facades\Auth;
-use Hermes\User;
-
-class WelcomeNewCustomer extends Mailable
+class DeniedAccount extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -19,13 +16,10 @@ class WelcomeNewCustomer extends Mailable
      *
      * @return void
      */
-    public function __construct($name, $email, $password)
+    public function __construct( $name )
     {
+        $this->subject('Conta Negada');
         $this->name = $name;
-        $this->email = $email;
-        $this->password = $password;
-
-        $this->subject('Bem vindo a Start Comunicação');
     }
 
     /**
@@ -35,6 +29,6 @@ class WelcomeNewCustomer extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.welcome')->with(['name' => $this->name, 'email' => $this->email, 'password' => $this->password ]);
+        return $this->view('mails.deniedaccount')->with(['name' => $this->name]);
     }
 }

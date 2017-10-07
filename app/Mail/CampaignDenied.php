@@ -7,6 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+
 class CampaignDenied extends Mailable
 {
     use Queueable, SerializesModels;
@@ -16,9 +17,12 @@ class CampaignDenied extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($owner, $name, $date)
     {
-        //
+        $this->subject('Campanha negada.');
+        $this->name = $name;
+        $this->date = $date;
+        $this->owner = $owner;
     }
 
     /**
@@ -28,6 +32,6 @@ class CampaignDenied extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('mails.deniedcampaign')->with(['customer_name' => $this->owner, 'campaign_name' => $this->name, 'campaign_date' => $this->date]);
     }
 }

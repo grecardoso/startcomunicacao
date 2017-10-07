@@ -489,36 +489,9 @@
                                                         <tbody><tr>
 
                                                             <td class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;" valign="top">
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1.5em">Olá {{ $name }}, tudo bem?<br>
-                                                                    &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Meu nome é Gregory Cardoso, sou diretor comercial da Start Comunicação.<br>
-                                                                    &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Agradecemos o interesse na ferramenta de disparo em massa! Você está recebendo esse e-mail automático por ter preenchido o cadastro para o uso da nossa ferramenta.<br>
-                                                                    &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Essa ferramenta é usada para envio massivo de mensagens de WhatsApp, 10 mil, 100 mil, 1 milhão de mensagens. Seja qual for sua demanda, podemos oferecer uma solução.<br>
-                                                                    &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">A plataforma trabalha com envios de IMAGEM, VÍDEO, AUDIO, VCARD, TEXTO, não cobramos disparos à mais por envios de Imagem+Texto ou Vídeo+Texto.<br>
-                                                                    <br>
-                                                                    Estamos disponibilizando uma quantidade de 100 créditos para envios de <u><strong>texto</strong></u> para você testar a nossa ferramenta.<br>
-                                                                    &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Acesse agora o sistema online <a href="http://sistemawhatsapp.com/login" target="_blank">clicando aqui</a><br>
-                                                                    <br>
-                                                                    Seus dados de acesso são:</p>
-
-                                                                <p>&nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Usuário: <b>{{ $email }}</b></p>
-
-                                                                <p>&nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Senha: <b>{{ $password }}</b></p>
-
+                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">
+                                                                    Novo cliente cadastrado no sistema. Acessar plataforma para aprovar ou negar sua conta.
+                                                                </p>
                                                             </td>
                                                         </tr>
                                                         </tbody></table>

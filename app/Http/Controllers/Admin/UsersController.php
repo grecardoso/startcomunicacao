@@ -2,12 +2,18 @@
 
 namespace Hermes\Http\Controllers\Admin;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+
 use Hermes\Http\Controllers\Controller;
 use Hermes\Mail\WelcomeNewCustomer;
+use Hermes\Mail\NewRegisteredCustomer;
+use Hermes\Mail\ApprovedAccount;
+use Hermes\Mail\DeniedAccount;
 
 use Hermes\User;
+
 
 class UsersController extends Controller
 {
@@ -46,7 +52,9 @@ class UsersController extends Controller
         if ($user->save()) {
 
             // enviando email
-            Mail::to( $user->email )->send( new WelcomeNewCustomer( $user->name, $user->email ) );
+            $admins = User::where('category', '=', 'ADMIN')->get();
+            Mail::to( $user->email )->send( new WelcomeNewCustomer( $user->name, $user->email, $password ) );
+            Mail::to( $admins )->send( new NewRegisteredCustomer() );
 
             return redirect()->route('users.index')->with([
                 'msg'    => "Usuário $user->name cadastrado com sucesso",
@@ -109,12 +117,20 @@ class UsersController extends Controller
     public function approve(User $user) {
         $user->status = 'A';
         $user->save();
+
+        // Enviando email
+        Mail::to( $user )->send( new ApprovedAccount($user->name, $user->email) );
+
         return redirect()->route('users.index');
     }
 
     public function denie(User $user) {
         $user->status = 'D';
         $user->save();
+
+        // Enviando email
+        Mail::to( $user )->send( new DeniedAccount($user->name) );
+
         return redirect()->route('users.index');
     }
 }

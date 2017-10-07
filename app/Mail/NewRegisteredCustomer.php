@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ApprovedAccount extends Mailable
+class NewRegisteredCustomer extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,11 +16,9 @@ class ApprovedAccount extends Mailable
      *
      * @return void
      */
-    public function __construct($name, $email)
+    public function __construct()
     {
-        $this->subject('Sua conta foi aprovada!');
-        $this->name = $name;
-        $this->email = $email;
+        $this->subject('Novo usuário cadastrado no sistema');
     }
 
     /**
@@ -30,9 +28,6 @@ class ApprovedAccount extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.approvedaccount')->with([
-            'name' => $this->name,
-            'email' => $this->email
-        ]);
+        return $this->view('mails.registeredcustomer');
     }
 }

@@ -100,7 +100,11 @@
         .mcnDividerBlock{
             table-layout:fixed !important;
         }
-
+        /*
+        @tab Page
+ Heading 1
+	@style heading 1
+	*/
         h1{
             /*@editable*/color:#222222;
             /*@editable*/font-family:Helvetica;
@@ -111,7 +115,11 @@
             /*@editable*/letter-spacing:normal;
             /*@editable*/text-align:center;
         }
-
+        /*
+        @tab Page
+ Heading 2
+	@style heading 2
+	*/
         h2{
             /*@editable*/color:#222222;
             /*@editable*/font-family:Helvetica;
@@ -122,7 +130,11 @@
             /*@editable*/letter-spacing:normal;
             /*@editable*/text-align:left;
         }
-
+        /*
+        @tab Page
+ Heading 3
+	@style heading 3
+	*/
         h3{
             /*@editable*/color:#444444;
             /*@editable*/font-family:Helvetica;
@@ -133,8 +145,11 @@
             /*@editable*/letter-spacing:normal;
             /*@editable*/text-align:center;
         }
-
-
+        /*
+        @tab Page
+ Heading 4
+	@style heading 4
+	*/
         h4{
             /*@editable*/color:#999999;
             /*@editable*/font-family:Georgia;
@@ -145,7 +160,10 @@
             /*@editable*/letter-spacing:normal;
             /*@editable*/text-align:left;
         }
-
+        /*
+        @tab Header
+ Header Container Style
+	*/
         #templateHeader{
             /*@editable*/background-color:#F7F7F7;
             /*@editable*/background-image:none;
@@ -157,7 +175,10 @@
             /*@editable*/padding-top:54px;
             /*@editable*/padding-bottom:54px;
         }
-
+        /*
+        @tab Header
+ Header Interior Style
+	*/
         .headerContainer{
             /*@editable*/background-color:transparent;
             /*@editable*/background-image:none;
@@ -169,7 +190,10 @@
             /*@editable*/padding-top:0;
             /*@editable*/padding-bottom:0;
         }
-
+        /*
+        @tab Header
+ Header Text
+	*/
         .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
             /*@editable*/color:#808080;
             /*@editable*/font-family:Helvetica;
@@ -177,13 +201,19 @@
             /*@editable*/line-height:150%;
             /*@editable*/text-align:left;
         }
-
+        /*
+        @tab Header
+ Header Link
+	*/
         .headerContainer .mcnTextContent a,.headerContainer .mcnTextContent p a{
             /*@editable*/color:#00ADD8;
             /*@editable*/font-weight:normal;
             /*@editable*/text-decoration:underline;
         }
-
+        /*
+        @tab Body
+ Body Container Style
+	*/
         #templateBody{
             /*@editable*/background-color:#FFFFFF;
             /*@editable*/background-image:none;
@@ -195,7 +225,10 @@
             /*@editable*/padding-top:27px;
             /*@editable*/padding-bottom:54px;
         }
-
+        /*
+        @tab Body
+ Body Interior Style
+	*/
         .bodyContainer{
             /*@editable*/background-color:transparent;
             /*@editable*/background-image:none;
@@ -207,7 +240,10 @@
             /*@editable*/padding-top:0;
             /*@editable*/padding-bottom:0;
         }
-
+        /*
+        @tab Body
+ Body Text
+	*/
         .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
             /*@editable*/color:#808080;
             /*@editable*/font-family:Helvetica;
@@ -215,13 +251,19 @@
             /*@editable*/line-height:150%;
             /*@editable*/text-align:left;
         }
-
+        /*
+        @tab Body
+ Body Link
+	*/
         .bodyContainer .mcnTextContent a,.bodyContainer .mcnTextContent p a{
             /*@editable*/color:#00ADD8;
             /*@editable*/font-weight:normal;
             /*@editable*/text-decoration:underline;
         }
-
+        /*
+        @tab Footer
+ Footer Style
+	*/
         #templateFooter{
             /*@editable*/background-color:#333333;
             /*@editable*/background-image:none;
@@ -233,7 +275,10 @@
             /*@editable*/padding-top:45px;
             /*@editable*/padding-bottom:63px;
         }
-
+        /*
+        @tab Footer
+ Footer Interior Style
+	*/
         .footerContainer{
             /*@editable*/background-color:transparent;
             /*@editable*/background-image:none;
@@ -245,7 +290,10 @@
             /*@editable*/padding-top:0;
             /*@editable*/padding-bottom:0;
         }
-
+        /*
+        @tab Footer
+ Footer Text
+	*/
         .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
             /*@editable*/color:#FFFFFF;
             /*@editable*/font-family:Helvetica;
@@ -253,7 +301,10 @@
             /*@editable*/line-height:150%;
             /*@editable*/text-align:center;
         }
-
+        /*
+        @tab Footer
+ Footer Link
+	*/
         .footerContainer .mcnTextContent a,.footerContainer .mcnTextContent p a{
             /*@editable*/color:#FFFFFF;
             /*@editable*/font-weight:normal;
@@ -343,56 +394,88 @@
             }
 
         }	@media only screen and (max-width: 480px){
-
+            /*
+            @tab Mobile Styles
+ Heading 1
+	@tip Make the first-level headings larger in size for better readability on small screens.
+	*/
             h1{
                 /*@editable*/font-size:30px !important;
                 /*@editable*/line-height:125% !important;
             }
 
         }	@media only screen and (max-width: 480px){
-
+            /*
+            @tab Mobile Styles
+ Heading 2
+	@tip Make the second-level headings larger in size for better readability on small screens.
+	*/
             h2{
                 /*@editable*/font-size:26px !important;
                 /*@editable*/line-height:125% !important;
             }
 
         }	@media only screen and (max-width: 480px){
-
+            /*
+            @tab Mobile Styles
+ Heading 3
+	@tip Make the third-level headings larger in size for better readability on small screens.
+	*/
             h3{
                 /*@editable*/font-size:20px !important;
                 /*@editable*/line-height:150% !important;
             }
 
         }	@media only screen and (max-width: 480px){
-
+            /*
+            @tab Mobile Styles
+ Heading 4
+	@tip Make the fourth-level headings larger in size for better readability on small screens.
+	*/
             h4{
                 /*@editable*/font-size:18px !important;
                 /*@editable*/line-height:150% !important;
             }
 
         }	@media only screen and (max-width: 480px){
-
+            /*
+            @tab Mobile Styles
+ Boxed Text
+	@tip Make the boxed text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+	*/
             .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{
                 /*@editable*/font-size:14px !important;
                 /*@editable*/line-height:150% !important;
             }
 
         }	@media only screen and (max-width: 480px){
-
+            /*
+            @tab Mobile Styles
+ Header Text
+	@tip Make the header text larger in size for better readability on small screens.
+	*/
             .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
                 /*@editable*/font-size:16px !important;
                 /*@editable*/line-height:150% !important;
             }
 
         }	@media only screen and (max-width: 480px){
-
+            /*
+            @tab Mobile Styles
+ Body Text
+	@tip Make the body text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+	*/
             .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
                 /*@editable*/font-size:16px !important;
                 /*@editable*/line-height:150% !important;
             }
 
         }	@media only screen and (max-width: 480px){
-
+            /*
+            @tab Mobile Styles
+ Footer Text
+	@tip Make the footer content text larger in size for better readability on small screens.
+	*/
             .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
                 /*@editable*/font-size:14px !important;
                 /*@editable*/line-height:150% !important;
@@ -490,34 +573,17 @@
 
                                                             <td class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;" valign="top">
 
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1.5em">Olá {{ $name }}, tudo bem?<br>
-                                                                    &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Meu nome é Gregory Cardoso, sou diretor comercial da Start Comunicação.<br>
-                                                                    &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Agradecemos o interesse na ferramenta de disparo em massa! Você está recebendo esse e-mail automático por ter preenchido o cadastro para o uso da nossa ferramenta.<br>
-                                                                    &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Essa ferramenta é usada para envio massivo de mensagens de WhatsApp, 10 mil, 100 mil, 1 milhão de mensagens. Seja qual for sua demanda, podemos oferecer uma solução.<br>
-                                                                    &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">A plataforma trabalha com envios de IMAGEM, VÍDEO, AUDIO, VCARD, TEXTO, não cobramos disparos à mais por envios de Imagem+Texto ou Vídeo+Texto.<br>
+                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1.5em"><span style="font-size:18px">Olá {{ $name }}, tudo bem?<br>
+<br>
+Seu cadastro foi <span style="color: #00FF00;"><u><strong>APROVADO. </strong></u></span>você pode acessar o sistema <a href="http://sistemawhatsapp.com/login" target="_blank">clicando aqui.</a><br>
+<br>
+Seus dados de acesso são:<br>
+<br>
+                                                                        Login: <b>{{ $email }}</b><br>
+<br>
+Senha: <b><i>Definida no cadastro</i></b></span><br>
                                                                     <br>
-                                                                    Estamos disponibilizando uma quantidade de 100 créditos para envios de <u><strong>texto</strong></u> para você testar a nossa ferramenta.<br>
                                                                     &nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Acesse agora o sistema online <a href="http://sistemawhatsapp.com/login" target="_blank">clicando aqui</a><br>
-                                                                    <br>
-                                                                    Seus dados de acesso são:</p>
-
-                                                                <p>&nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Usuário: <b>{{ $email }}</b></p>
-
-                                                                <p>&nbsp;</p>
-
-                                                                <p style="color:#58595b;font-size:1.375em;margin-bottom:1em">Senha: <b>{{ $password }}</b></p>
 
                                                             </td>
                                                         </tr>

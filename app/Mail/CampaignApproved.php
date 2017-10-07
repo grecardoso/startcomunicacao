@@ -16,9 +16,10 @@ class CampaignApproved extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name)
     {
-        //
+        $this->subject('Campanha aprovada!');
+        $this->name = $name;
     }
 
     /**
@@ -28,6 +29,6 @@ class CampaignApproved extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('mails.approvedcampaign')->with(['name' => $this->name]);
     }
 }

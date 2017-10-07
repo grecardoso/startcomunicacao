@@ -2,6 +2,7 @@
 
 namespace Hermes\Http\Controllers\Auth;
 
+use Hermes\Mail\NewRegisteredCustomer;
 use Hermes\User;
 use Hermes\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -73,9 +74,12 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
+        $admins = User::where('category', '=', 'ADMIN')->get();
+
         if ( $user->save() ) {
             // enviando email
-            Mail::to( $user->email )->send( new WelcomeNewCustomer( $user->name, $user->email ) );
+            Mail::to( $user->email )->send( new WelcomeNewCustomer( $user->name, $user->email, $data['password'] ) );
+            Mail::to( $admins )->send( new NewRegisteredCustomer() );
         }
 
         return $user;

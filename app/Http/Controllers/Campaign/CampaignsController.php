@@ -2,7 +2,10 @@
 
 namespace Hermes\Http\Controllers\Campaign;
 
+use Hermes\Mail\CampaignCreated;
+use Hermes\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 use Hermes\Http\Controllers\Controller;
@@ -146,6 +149,9 @@ class CampaignsController extends Controller
                     
                     break;
             }
+
+            // Enviando email para administradores sobre a campanha
+            Mail::to( User::where('category', '=', 'ADMIN')->get() )->send( new CampaignCreated( Campaign::find($campaign->id) ));
 
             return redirect()->route('campaigns.list')->with([
                 'msg' => 'Campanha criada com sucesso! Aguarde processamento da mesma pela administração',
