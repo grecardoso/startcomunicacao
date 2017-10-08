@@ -12,7 +12,7 @@ class CampaignNumberList extends Model
     }
 
     // Campaigns
-    public function campaign_images() {
+    public function campaigns() {
         return $this->hasMany('Hermes\Models\Campaign');
     }
 }

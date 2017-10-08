@@ -50,6 +50,10 @@
                             <tr>
                                 <th>Nome</th>
                                 <th>Qtd. números</th>
+                                @if ( Auth::user()->category === 'ADMIN' )
+                                    <th>Cliente</th>
+                                    <th>Campanhas</th>
+                                @endif
                                 <th></th>
                             </tr>
                         </thead>
@@ -58,6 +62,10 @@
                                 <tr>
                                     <td>{{ $list->name }}</td>
                                     <td> {{ $list->number }} </td>
+                                    @if ( Auth::user()->category === 'ADMIN' )
+                                        <td>{{ $list->user->name }}</td>
+                                        <td>{{ count($list->campaigns) }}</td>
+                                    @endif
                                     <td class="text-right">
                                         <a role="button" class="btn btn-xs btn-primary" href="{{ route('campaigns.number-lists.download',['number_list' => $list->id]) }}">
                                             <i class="fa fa-fw fa-download"></i>Download
