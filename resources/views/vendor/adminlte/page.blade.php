@@ -59,7 +59,7 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-fw fa-money"></i> Créditos: <b>{{ Auth::user()->credit->total }}</b>
+                                <i class="fa fa-fw fa-money"></i> Créditos: <b>@if( Auth::user()->credit ) {{ Auth::user()->credit->total }}@else 0 @endif</b>
                             </a>
                         </li>
 
