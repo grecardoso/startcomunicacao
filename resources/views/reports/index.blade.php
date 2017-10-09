@@ -58,23 +58,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach( $reports as $report )
-                                <tr>
-                                    <td>{{ $report->name }}</td>
-                                    <td>{{ $report->campaign->name }}</td>
-                                    <td>{{ $report->campaign->user->name }}</td>
-                                    <td class="text-right">
-                                        <a role="button" class="btn btn-xs btn-primary" href="{{ route('report.download', ['id' => $report->id])}}">
-                                            <i class="fa fa-fw fa-download"></i>Download
-                                        </a>
-                                        @if( Auth::user()->category === 'ADMIN')
-                                            <button type"button" class="btn btn-xs btn-danger" onclick="deleteReport({{ $report->id }})">
+                            @isset( $report->campaign )
+                                @foreach( $reports as $report )
+                                    <tr>
+                                        <td>{{ $report->name }}</td>
+                                        <td>{{ $report->campaign->name }}</td>
+                                        <td>{{ $report->campaign->user->name }}</td>
+                                        <td class="text-right">
+                                            <a role="button" class="btn btn-xs btn-primary" href="{{ route('report.download', ['id' => $report->id])}}">
+                                                <i class="fa fa-fw fa-download"></i>Download
+                                            </a>
+                                            @if( Auth::user()->category === 'ADMIN')
+                                                <button type"button" class="btn btn-xs btn-danger" onclick="deleteReport({{ $report->id }})">
                                                 <i class="fa fa-fw fa-trash"></i>
-                                            </button>
-                                        @endif
-                                    </td>
-                                </tr>
-                            @endforeach
+                                                </button>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endisset
                         </tbody>
                     </table>
                 </div>
