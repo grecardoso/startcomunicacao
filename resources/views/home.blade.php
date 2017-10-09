@@ -54,6 +54,7 @@
             </div>
         </div>
         <!-- /.col -->
+
         @if( Auth::user()->category === 'ADMIN')
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="small-box bg-aqua">
@@ -69,6 +70,21 @@
             </div>
         </div>
         <!-- /.col -->
+        @else
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="small-box bg-blue">
+                    <div class="inner">
+                        <h3>{{ count( $reports ) }}</h3>
+
+                        <p>Relatórios Abertos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="{{ route('reports.index') }}" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- /.col -->
         @endif
     </div><!-- Info boxes -->
     <!-- /.row -->

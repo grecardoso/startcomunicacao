@@ -33,12 +33,13 @@ class HomeController extends Controller
             ['category', '=', 'CUSTOMER'],
             ['status', '=', 'W']
         ])->orderBy('id', 'desc')->get();
-        $reports = Report::orderBy('id', 'desc')->limit(10)->get();
         $campaigns = null;
+        $reports = null;
         $started = null;
         $denied = null;
         if ( Auth::user()->category === 'ADMIN') {
             $campaigns = Campaign::where('status','=','W')->orderBy('id', 'desc')->get();
+            $reports = Report::orderBy('id', 'desc')->get();
             $started = Campaign::where('status','=','S')->orderBy('id', 'desc')->count();
             $denied = Campaign::where('status','=','D')->orderBy('id', 'desc')->count();
         } else {
@@ -46,6 +47,10 @@ class HomeController extends Controller
                 ['status','=','W'],
                 ['user_id', '=', Auth::user()->id]
             ])->orderBy('id', 'desc')->get();
+            $reports = Report::where([
+                //['status','=','W'],
+                ['user_id', '=', Auth::user()->id]
+            ])->orderBy('id', 'desc')->limit(10)->get();
             $started = Campaign::where([
                 ['status','=','S'],
                 ['user_id', '=', Auth::user()->id]
