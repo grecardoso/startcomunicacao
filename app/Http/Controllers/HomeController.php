@@ -35,18 +35,32 @@ class HomeController extends Controller
         ])->orderBy('id', 'desc')->get();
         $reports   = Report::orderBy('id', 'desc')->limit(10)->get();
         $campaigns = null;
+        $started = null;
+        $denied = null;
         if ( Auth::user()->category === 'ADMIN') {
             $campaigns = Campaign::where('status','=','W')->orderBy('id', 'desc')->get();
+            $started =  Campaign::where('status','=','S')->orderBy('id', 'desc')->count();
+            $denied =  Campaign::where('status','=','D')->orderBy('id', 'desc')->count();
         } else {
             $campaigns = Campaign::where([
                 ['status','=','W'],
                 ['user_id', '=', Auth::user()->id]
             ])->orderBy('id', 'desc')->get();
+            $started = Campaign::where([
+                ['status','=','S'],
+                ['user_id', '=', Auth::user()->id]
+            ])->orderBy('id', 'desc')->count();
+            $denied = Campaign::where([
+                ['status','=','D'],
+                ['user_id', '=', Auth::user()->id]
+            ])->orderBy('id', 'desc')->count();
         }
         return view('home',[
             'customers' => $customers,
             'reports' => $reports,
-            'campaigns' => $campaigns
+            'campaigns' => $campaigns,
+            'campaigns_started' => $started,
+            'campaigns_denied' => $denied
         ]);
     }
 }
