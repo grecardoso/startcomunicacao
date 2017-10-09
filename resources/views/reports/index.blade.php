@@ -62,8 +62,13 @@
                                 @foreach( $reports as $report )
                                     <tr>
                                         <td>{{ $report->name }}</td>
-                                        <td>@if( $report->campaign->name ){{ $report->campaign->name }}@endif</td>
-                                        <td>@if( $report->campaign->user->name ){{ $report->campaign->user->name }}@endif</td>
+                                        @if( $report->campaign !== null )
+                                            <td>{{ $report->campaign->name }}</td>
+                                            <td>{{ $report->campaign->user->name }}</td>
+                                        @else
+                                            <td></td>
+                                            <td></td>
+                                        @endif
                                         <td class="text-right">
                                             <a role="button" class="btn btn-xs btn-primary" href="{{ route('report.download', ['id' => $report->id])}}">
                                                 <i class="fa fa-fw fa-download"></i>Download
