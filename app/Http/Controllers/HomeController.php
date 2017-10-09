@@ -39,8 +39,8 @@ class HomeController extends Controller
         $denied = null;
         if ( Auth::user()->category === 'ADMIN') {
             $campaigns = Campaign::where('status','=','W')->orderBy('id', 'desc')->get();
-            $started =  Campaign::where('status','=','S')->orderBy('id', 'desc')->count();
-            $denied =  Campaign::where('status','=','D')->orderBy('id', 'desc')->count();
+            $started = Campaign::where('status','=','S')->orderBy('id', 'desc')->count();
+            $denied = Campaign::where('status','=','D')->orderBy('id', 'desc')->count();
         } else {
             $campaigns = Campaign::where([
                 ['status','=','W'],
