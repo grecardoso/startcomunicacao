@@ -33,7 +33,7 @@ class HomeController extends Controller
             ['category', '=', 'CUSTOMER'],
             ['status', '=', 'W']
         ])->orderBy('id', 'desc')->get();
-        $reports   = Report::orderBy('id', 'desc')->limit(10)->get();
+        $reports = Report::orderBy('id', 'desc')->limit(10)->get();
         $campaigns = null;
         $started = null;
         $denied = null;

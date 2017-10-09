@@ -7,7 +7,6 @@
 @stop
 
 @section('content')
-    @if( Auth::user()->category === 'ADMIN')
     <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="small-box bg-yellow">
@@ -55,6 +54,7 @@
             </div>
         </div>
         <!-- /.col -->
+        @if( Auth::user()->category === 'ADMIN')
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="small-box bg-aqua">
                 <div class="inner">
@@ -69,8 +69,8 @@
             </div>
         </div>
         <!-- /.col -->
+        @endif
     </div><!-- Info boxes -->
-    @endif
     <!-- /.row -->
 
     <div class="row">
