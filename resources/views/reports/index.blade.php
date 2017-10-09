@@ -58,7 +58,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @isset( $report->campaign )
+                            @isset($reports)
                                 @foreach( $reports as $report )
                                     <tr>
                                         <td>{{ $report->name }}</td>
