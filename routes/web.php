@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth', 'auth.approved']], function() {
     /**
     * Users Routes
     */
-    Route::namespace('Admin')->group( function (){
+    Route::namespace('Admin')->middleware('auth.admin')->group( function (){
         Route::prefix('blacklist')->group(function () {
             Route::get('/', 'BlacklistController@index')->name('blacklist.index');
             Route::post('/', 'BlacklistController@store')->name('blacklist.store');

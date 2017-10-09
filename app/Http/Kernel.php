@@ -57,6 +57,7 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \Hermes\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'auth.approved' => \Hermes\Http\Middleware\RedirectIfNotApproved::class
+        'auth.approved' => \Hermes\Http\Middleware\RedirectIfNotApproved::class,
+        'auth.admin' => \Hermes\Http\Middleware\RedirectIfNotAdmin::class
     ];
 }

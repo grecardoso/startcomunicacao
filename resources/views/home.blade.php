@@ -19,7 +19,7 @@
                 <div class="icon">
                     <i class="ion ion-ios-list"></i>
                 </div>
-                <a href="#" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="/campaigns/list?filter%5BW%5D=on" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- /.col -->
@@ -33,7 +33,7 @@
                 <div class="icon">
                     <i class="ion ion-ios-list"></i>
                 </div>
-                <a href="#" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="/campaigns/list?filter%5BS%5D=on" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- /.col -->
@@ -51,7 +51,7 @@
                 <div class="icon">
                     <i class="ion ion-ios-list"></i>
                 </div>
-                <a href="#" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="/campaigns/list?filter%5BD%5D=on" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- /.col -->
@@ -65,7 +65,7 @@
                 <div class="icon">
                     <i class="ion ion-person-add"></i>
                 </div>
-                <a href="#" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ route('users.index') }}" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- /.col -->
