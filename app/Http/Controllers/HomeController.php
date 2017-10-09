@@ -8,6 +8,7 @@ use Hermes\User;
 use Hermes\Models\Campaign;
 use Hermes\Models\Message;
 use Hermes\Models\Report;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -33,7 +34,15 @@ class HomeController extends Controller
             ['status', '=', 'W']
         ])->orderBy('id', 'desc')->get();
         $reports   = Report::orderBy('id', 'desc')->limit(10)->get();
-        $campaigns = Campaign::where('status','=','W')->orderBy('id', 'desc')->get();
+        $campaigns = null;
+        if ( Auth::user()->category === 'ADMIN') {
+            $campaigns = Campaign::where('status','=','W')->orderBy('id', 'desc')->get();
+        } else {
+            $campaigns = Campaign::where([
+                ['status','=','W'],
+                ['user_id', '=', Auth::user()->id]
+            ])->orderBy('id', 'desc')->get();
+        }
         return view('home',[
             'customers' => $customers,
             'reports' => $reports,

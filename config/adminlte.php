@@ -157,20 +157,20 @@ return [
 
         [
             'text' => 'Histórico',
-            'url'  => '/history',
+            'url'  => '#',
             'icon' => 'history'
         ],
 
         'Configurações',
         [
             'text' => 'Perfil',
-            'url'  => '/profile',
+            'url'  => '#',
             'icon' => 'user',
         ],
 
         [
             'text' => 'Trocar senha',
-            'url'  => '/password',
+            'url'  => '#',
             'icon' => 'lock',
         ]
     ],
