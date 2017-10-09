@@ -58,7 +58,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @isset($reports)
+                            @if( count($reports))
                                 @foreach( $reports as $report )
                                     <tr>
                                         <td>{{ $report->name }}</td>
@@ -76,7 +76,7 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                            @endisset
+                            @endif
                         </tbody>
                     </table>
                 </div>
