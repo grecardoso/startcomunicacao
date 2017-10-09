@@ -32,7 +32,6 @@ Route::group(['middleware' => ['auth', 'auth.approved']], function() {
         });
 
         Route::resource('users', 'UsersController')->only(['index', 'update', 'destroy', 'store']);
-        Route::resource('reports', 'ReportsController')->only(['index', 'store', 'destroy']);
         Route::resource('messages', 'MessagesController')->only(['index', 'store', 'destroy']);
         Route::get('/profile', 'UsersController@profile')->name('user.profile');
         Route::get('/reports/{id}/download', 'ReportsController@download')->name('report.download');
@@ -40,6 +39,8 @@ Route::group(['middleware' => ['auth', 'auth.approved']], function() {
         Route::post('/users/{user}/approve', 'UsersController@approve')->name('admin.users.approve');
         Route::post('/users/{user}/denie', 'UsersController@denie')->name('admin.users.denie');
     });
+
+    Route::resource('reports', 'Admin\ReportsController')->only(['index', 'store', 'destroy']);
 
     /**
     * Campaigns Routes
