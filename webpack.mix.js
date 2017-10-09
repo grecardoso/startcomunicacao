@@ -11,5 +11,5 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.babel(['resources/assets/js/*/*/*'], 'public/js/app.js')
+mix.babel(['resources/assets/js/messages_top_bar.js','resources/assets/js/*/*/*'], 'public/js/app.js')
    .sass('resources/assets/sass/app.scss', 'public/css');

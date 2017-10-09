@@ -17,7 +17,7 @@
                     <p>Abertas</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-ios-list"></i>
+                    <i class="ion ion-checkmark-circled"></i>
                 </div>
                 <a href="/campaigns/list?filter%5BW%5D=on" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
             </div>
@@ -31,7 +31,7 @@
                     <p>Iniciadas</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-ios-list"></i>
+                    <i class="ion ion-checkmark-circled"></i>
                 </div>
                 <a href="/campaigns/list?filter%5BS%5D=on" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
             </div>
@@ -49,7 +49,7 @@
                     <p>Negadas</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-ios-list"></i>
+                    <i class="ion ion-checkmark-circled"></i>
                 </div>
                 <a href="/campaigns/list?filter%5BD%5D=on" class="small-box-footer">Acessar <i class="fa fa-arrow-circle-right"></i></a>
             </div>
@@ -173,6 +173,5 @@
 @stop
 
 @section('js')
-
     <script src="{{ asset('js/app.js') }}"></script>
 @stop

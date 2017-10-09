@@ -82,6 +82,10 @@ Route::group(['middleware' => ['auth', 'auth.approved']], function() {
             Route::post('/{id}/complete', 'RestCampaignsController@completeCampaign');
         });
 
+        Route::prefix('messages')->group(function () {
+            Route::get('/', 'RestMessagesController@index');
+        });
+
         Route::get('blacklist', 'RestBlacklistController@index');
     });
 });
