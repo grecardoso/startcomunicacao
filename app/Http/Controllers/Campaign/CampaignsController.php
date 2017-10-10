@@ -83,6 +83,12 @@ class CampaignsController extends Controller
         }
                 
         if( $campaign->save() ) {
+            // Salvando avatar da campanha
+            if ( $request->hasFile('avatar') ) {
+                $file_name = (new \DateTime('now'))->format('YmdHis') . "-" . $campaign->id . "." . $request->avatar->extension();
+                $campaign->avatar = $request->avatar->storeAs('campaigns/avatars', $file_name);
+                $campaign->save();
+            }
 
             switch( $request->input('type') ) {
              

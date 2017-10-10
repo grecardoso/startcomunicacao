@@ -21,7 +21,19 @@
                 <form id="campaign-add-form" action="{{ route('campaigns.store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}       
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
-                    
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                            <div class="form-group">
+                                <label for="campaign-avatar">Avatar</label>
+                                <input type="file"  id="campaign-avatar" class="form-control" name="avatar" placeholder="arquivo">
+                                <p class="help-block">
+                                    Avatar aceito em 192x192 pixels<br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                             <div class="form-group">

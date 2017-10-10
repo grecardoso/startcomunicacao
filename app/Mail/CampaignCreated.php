@@ -31,7 +31,7 @@ class CampaignCreated extends Mailable
     {
         $type = $this->campaign->type;
         if ( $type !== 'TXT') {
-            if ( isset( $this->campaign->user->path ) ) {
+            if ( isset( $this->campaign->avatar ) ) {
                 return $this->view('mails.createdcampaign')->with([
                     'name' => $this->campaign->name,
                     'text' => $this->campaign->message,
@@ -39,7 +39,7 @@ class CampaignCreated extends Mailable
                     'date' => \Datetime::createFromFormat('Y-m-d', $this->campaign->date)->format('d-m-Y')
                 ])
                     ->attach(storage_path('app/') . $this->campaign->campaign_file->path)
-                    ->attach(storage_path('app/') . $this->campaign->user->path);
+                    ->attach(storage_path('app/') . $this->campaign->avatar);
             } else {
                 return $this->view('mails.createdcampaign')->with([
                     'name'  => $this->campaign->name,
@@ -49,13 +49,13 @@ class CampaignCreated extends Mailable
                 ])->attach(storage_path('app/') . $this->campaign->campaign_file->path);
             }
         } else {
-            if ( isset( $this->campaign->user->path ) ) {
+            if ( isset( $this->campaign->avatar ) ) {
                 return $this->view('mails.createdcampaign')->with([
                     'name' => $this->campaign->name,
                     'text' => $this->campaign->message,
                     'owner' => $this->campaign->user->name,
                     'date' => \Datetime::createFromFormat('Y-m-d', $this->campaign->date)->format('d-m-Y')
-                ])->attach(storage_path('app/') . $this->campaign->user->path);
+                ])->attach(storage_path('app/') . $this->campaign->avatar);
             } else {
                 return $this->view('mails.createdcampaign')->with([
                     'name'  => $this->campaign->name,

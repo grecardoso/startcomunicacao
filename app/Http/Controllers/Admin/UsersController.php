@@ -43,16 +43,6 @@ class UsersController extends Controller
                 if ($request->input('password') === $request->input('password_confirmation'))
                     $user->password = bcrypt($request->input('password'));
 
-            // Deletando anterior e Salvando atual
-            if( isset($user->path) ) {
-                Storage::disk('local')->delete( $user->path );
-                $file_name = (new \DateTime('now'))->format('YmdHis') . "-" . $user->id . "." . $request->file->extension();
-                $user->path = $request->file->storeAs('users/avatars', $file_name);
-            } else {
-                $file_name = (new \DateTime('now'))->format('YmdHis') . "-" . $user->id . "." . $request->file->extension();
-                $user->path = $request->file->storeAs('users/avatars', $file_name);
-            }
-
             if ($user->save()) {
                 return redirect()->route('user.profile')->with([
                     'msg' => "Usuário $user->name alterado com sucesso",

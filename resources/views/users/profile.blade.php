@@ -67,14 +67,6 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="report-file">Avatar</label>
-                                    <input type="file" class="form-control" id="user-avatar" name="file" placeholder="arquivo" required>
-                                    <p class="help-block">
-                                        Tamanho máximo 4mb<br/>
-                                    </p>
-                                </div>
-
                                 <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
                                     <label for="user-password">Senha</label>
                                     <input id="user-password" type="password" name="password" class="form-control"
