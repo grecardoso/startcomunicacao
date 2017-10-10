@@ -33,7 +33,7 @@
 
             <script>
                 var _smartsupp = _smartsupp || {};
-                _smartsupp.key = 'YOUR_SMARTSUPP_CODE';
+                _smartsupp.key = '2de580083d5cb29a89a336f0234b1acac0aaf84d';
                 window.smartsupp||(function(d) {
                     var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
                     s=d.getElementsByTagName('script')[0];c=d.createElement('script');
