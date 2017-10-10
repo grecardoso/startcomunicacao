@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth', 'auth.approved']], function() {
     Route::resource('reports', 'Admin\ReportsController')->only(['index', 'store', 'destroy']);
     Route::get('/reports/{id}/download', 'Admin\ReportsController@download')->name('report.download');
     Route::get('/profile', 'Admin\UsersController@profile')->name('user.profile');
+    Route::post('/profile', 'Admin\UsersController@profile')->name('user.profile.store');
 
     /**
     * Campaigns Routes

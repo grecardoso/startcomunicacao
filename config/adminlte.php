@@ -164,13 +164,13 @@ return [
         'Configurações',
         [
             'text' => 'Perfil',
-            'url'  => '#',
+            'url'  => '/profile',
             'icon' => 'user',
         ],
 
         [
             'text' => 'Trocar senha',
-            'url'  => '#',
+            'url'  => '/change-password',
             'icon' => 'lock',
         ]
     ],

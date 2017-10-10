@@ -31,19 +31,39 @@ class CampaignCreated extends Mailable
     {
         $type = $this->campaign->type;
         if ( $type !== 'TXT') {
-            return $this->view('mails.createdcampaign')->with([
-                'name'  => $this->campaign->name,
-                'text'   => $this->campaign->message,
-                'owner' => $this->campaign->user->name,
-                'date'  => \Datetime::createFromFormat('Y-m-d', $this->campaign->date)->format('d-m-Y')
-            ])->attach(storage_path('app/') . $this->campaign->campaign_file->path);
+            if ( isset( $this->campaign->user->path ) ) {
+                return $this->view('mails.createdcampaign')->with([
+                    'name' => $this->campaign->name,
+                    'text' => $this->campaign->message,
+                    'owner' => $this->campaign->user->name,
+                    'date' => \Datetime::createFromFormat('Y-m-d', $this->campaign->date)->format('d-m-Y')
+                ])
+                    ->attach(storage_path('app/') . $this->campaign->campaign_file->path)
+                    ->attach(storage_path('app/') . $this->campaign->user->path);
+            } else {
+                return $this->view('mails.createdcampaign')->with([
+                    'name'  => $this->campaign->name,
+                    'text'   => $this->campaign->message,
+                    'owner' => $this->campaign->user->name,
+                    'date'  => \Datetime::createFromFormat('Y-m-d', $this->campaign->date)->format('d-m-Y')
+                ])->attach(storage_path('app/') . $this->campaign->campaign_file->path);
+            }
         } else {
-            return $this->view('mails.createdcampaign')->with([
-                'name'  => $this->campaign->name,
-                'text'   => $this->campaign->message,
-                'owner' => $this->campaign->user->name,
-                'date'  => \Datetime::createFromFormat('Y-m-d', $this->campaign->date)->format('d-m-Y')
-            ]);
+            if ( isset( $this->campaign->user->path ) ) {
+                return $this->view('mails.createdcampaign')->with([
+                    'name' => $this->campaign->name,
+                    'text' => $this->campaign->message,
+                    'owner' => $this->campaign->user->name,
+                    'date' => \Datetime::createFromFormat('Y-m-d', $this->campaign->date)->format('d-m-Y')
+                ])->attach(storage_path('app/') . $this->campaign->user->path);
+            } else {
+                return $this->view('mails.createdcampaign')->with([
+                    'name'  => $this->campaign->name,
+                    'text'   => $this->campaign->message,
+                    'owner' => $this->campaign->user->name,
+                    'date'  => \Datetime::createFromFormat('Y-m-d', $this->campaign->date)->format('d-m-Y')
+                ]);
+            }
         }
     }
 }

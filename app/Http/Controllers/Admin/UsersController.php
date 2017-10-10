@@ -13,6 +13,7 @@ use Hermes\Mail\ApprovedAccount;
 use Hermes\Mail\DeniedAccount;
 
 use Hermes\User;
+use Illuminate\Support\Facades\Storage;
 
 
 class UsersController extends Controller
@@ -26,7 +27,51 @@ class UsersController extends Controller
     }
 
     public function profile(Request $request) {
-        return $request->user();
+        /**
+         * TODO: Verificar se já existe uma avatar para o usuário. Se existir, altera. Caso contrário associa um novo
+         */
+        if ($request->method() == 'POST') {
+            $id = $request->input('user_id');
+            $name = $request->input('name');
+            $email = $request->input('email');
+
+            $user = User::findOrFail($id);
+            $user->name = $name;
+            $user->email = $email;
+
+            if ($request->input('password') && $request->input('password_confirmation'))
+                if ($request->input('password') === $request->input('password_confirmation'))
+                    $user->password = bcrypt($request->input('password'));
+
+            // Deletando anterior e Salvando atual
+            if( isset($user->path) ) {
+                Storage::disk('local')->delete( $user->path );
+                $file_name = (new \DateTime('now'))->format('YmdHis') . "-" . $user->id . "." . $request->file->extension();
+                $user->path = $request->file->storeAs('users/avatars', $file_name);
+            } else {
+                $file_name = (new \DateTime('now'))->format('YmdHis') . "-" . $user->id . "." . $request->file->extension();
+                $user->path = $request->file->storeAs('users/avatars', $file_name);
+            }
+
+            if ($user->save()) {
+                return redirect()->route('user.profile')->with([
+                    'msg' => "Usuário $user->name alterado com sucesso",
+                    'status' => 'success'
+                ]);
+            } else {
+                return redirect()->route('user.profile')->with([
+                    'msg' => "Ocorreu algum erro, tente novamente",
+                    'status' => 'error'
+                ]);
+            }
+        }
+
+        $user = $request->user();
+        return view('users.profile', compact('user'));
+    }
+
+    public function changePassword(Request $request) {
+
     }
 
     /**
