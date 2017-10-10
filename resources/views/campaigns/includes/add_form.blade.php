@@ -69,6 +69,9 @@
                                 <div class="input-group">
                                     <select class="form-control" id="campaign-number-list" name="number_list_id" required>
                                         <option>SELECIONE UMA LISTA</option>
+                                        @if( isset($number_list_default) )
+                                            <option value="{{ $number_list_default->id }}">{{ $number_list_default->name }}</option>
+                                        @endif
                                         @foreach( $number_lists as $list )
                                             <option value="{{ $list->id }}">{{ $list->name }}</option>
                                         @endforeach
