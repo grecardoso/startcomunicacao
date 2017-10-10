@@ -72,7 +72,7 @@
         <!-- /.col -->
         @else
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="small-box bg-blue">
+                <div class="small-box bg-blue" style="background-color: #6f4f9a !important">
                     <div class="inner">
                         <h3>{{ count( $reports ) }}</h3>
 

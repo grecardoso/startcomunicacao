@@ -90,7 +90,7 @@
                                 @endif
                                 <th>Status</th>
                                 <th>Lançamento</th>
-                                <th>Nome</th>
+                                <th>Cliente</th>
                                 <th>Tipo</th>
                                 <th>Lista de números</th>
                                 <th>Qtd. Números</th>
@@ -130,7 +130,7 @@
                                         @endif
                                     </td>
                                     <td> {{ (\DateTime::createFromFormat('Y-m-d', $campaign->date))->format('m-d-Y') }}</td>
-                                    <td>{{ $campaign->name }}</td>
+                                    <td>{{ $campaign->user->name }}</td>
                                     <td>
                                         @if( $campaign->type == 'TXT')
                                             TEXTO
