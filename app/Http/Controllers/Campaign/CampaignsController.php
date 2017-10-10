@@ -51,7 +51,7 @@ class CampaignsController extends Controller
         
         return view('campaigns.index', [
             'campaigns' => $campaigns,
-            'number_list_default' => CampaignNumberList::where('name', '=', 'PADRÃO STARTCOMUNICACAO')->get()->first(),
+            'number_list_default' => CampaignNumberList::where('name', '=', 'Lista Start Comunicacao')->get()->first(),
             'number_lists' => $number_lists,
             'filters' => $filters
         ]);
