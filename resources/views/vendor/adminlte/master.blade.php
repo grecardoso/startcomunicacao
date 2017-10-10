@@ -30,6 +30,17 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+            <script type="text/javascript">
+                var _smartsupp = _smartsupp || {};
+                _smartsupp.key = '2de580083d5cb29a89a336f0234b1acac0aaf84d';
+                window.smartsupp||(function(d) {
+                    var s,c,o=smartsupp=function(){ o..push(arguments)};o.=[];
+                    s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+                    c.type='text/javascript';c.charset='utf-8';c.async=true;
+                    c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+                })(document);
+            </script>
 </head>
 <body class="hold-transition @yield('body_class')">
     <div id="app">
