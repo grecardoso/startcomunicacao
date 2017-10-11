@@ -19,7 +19,7 @@ Route::get('/', function() {
 
 Route::group(['middleware' => ['auth', 'auth.approved']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::delete('/global-messages', 'Admin\MessagesController@deleteAllGlobalMessages');
+    Route::get('/global-messages', 'Admin\MessagesController@deleteAllGlobalMessages');
     
     /**
     * Users Routes
