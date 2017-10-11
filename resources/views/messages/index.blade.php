@@ -45,6 +45,10 @@
                         <i class="fa fa-fw fa-plus"></i> Cadastrar mensagem
                     </button>
 
+                    <button  class="btn btn-danger" style="margin-bottom: 12px;" onclick="deleteAllGlobalMessages()">
+                        <i class="fa fa-fw fa-trash"></i> Deletar Globais
+                    </button>
+
                     <table id="messages-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>

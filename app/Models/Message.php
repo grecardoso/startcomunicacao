@@ -10,7 +10,7 @@ use Hermes\User;
 class Message extends Model
 {
     protected $fillable = [
-        'title', 'to', 'from', 'content'
+        'title', 'to', 'from', 'content', 'category'
     ];
 
     public function to() {

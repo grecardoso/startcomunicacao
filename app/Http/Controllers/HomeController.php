@@ -37,6 +37,7 @@ class HomeController extends Controller
         $reports = null;
         $started = null;
         $denied = null;
+        $messages = null;
         if ( Auth::user()->category === 'ADMIN') {
             $campaigns = Campaign::where('status','=','W')->orderBy('id', 'desc')->get();
             $reports = Report::orderBy('id', 'desc')->get();
@@ -59,13 +60,16 @@ class HomeController extends Controller
                 ['status','=','D'],
                 ['user_id', '=', Auth::user()->id]
             ])->orderBy('id', 'desc')->count();
+            $messages = Message::where('category', '=', 'GLOBAL')->orderBy('id', 'desc')->get();
         }
+
         return view('home',[
             'customers' => $customers,
             'reports' => $reports,
             'campaigns' => $campaigns,
             'campaigns_started' => $started,
-            'campaigns_denied' => $denied
+            'campaigns_denied' => $denied,
+            'messages' => $messages
         ]);
     }
 }

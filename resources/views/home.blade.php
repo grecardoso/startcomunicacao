@@ -7,6 +7,15 @@
 @stop
 
 @section('content')
+    @isset( $messages )
+        @foreach( $messages as $msg )
+            <div class="callout callout-warning">
+                <h4><i class="icon fa fa-warning"></i> Aviso! {{ $msg->title }}</h4>
+                {!! $msg->content !!}
+            </div>
+        @endforeach
+    @endisset
+
     <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="small-box bg-yellow">

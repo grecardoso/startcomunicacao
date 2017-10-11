@@ -35,17 +35,40 @@ class MessagesController extends Controller
         /**
          * TODO: Disparar email para 'aviso de mensagem administrativa para usuário cliente'
          */
-        $message = Message::create( $request->all() );
-        if ($message->save()) {
+
+        if ( $request->input('category') === 'GLOBAL') {
+
+            $customers = User::where([
+                ['category', 'CUSTOMER'],
+                ['status', 'A']
+            ])->orderBy('id', 'desc')->get();
+
+            foreach($customers as $customer) {
+                $message = new Message();
+                $message->to = $customer->id;
+                $message->from = $request->input('from');
+                $message->title = $request->input('title');
+                $message->content = $request->input('content');
+                $message->category = $request->input('category');
+                $message->save();
+            }
             return redirect()->route('messages.index')->with([
                 'msg' => 'Mensagem criada com sucesso',
                 'status' => 'success'
             ]);
         } else {
-            return redirect()->route('messages.index')->with([
-                'msg' => 'Ocorreu um erro no processo. Tente novamente.',
-                'status' => 'error'
-            ]);
+            $message = Message::create( $request->all() );
+            if ($message->save()) {
+                return redirect()->route('messages.index')->with([
+                    'msg' => 'Mensagem criada com sucesso',
+                    'status' => 'success'
+                ]);
+            } else {
+                return redirect()->route('messages.index')->with([
+                    'msg' => 'Ocorreu um erro no processo. Tente novamente.',
+                    'status' => 'error'
+                ]);
+            }
         }
     }
 
@@ -66,5 +89,13 @@ class MessagesController extends Controller
                 'status' => 'error'
             ]);
         }
+    }
+
+    public function deleteAllGlobalMessages() {
+        Message::where('category', '=', 'GLOBAL')->delete();
+        return redirect()->route('messages.index')->with([
+            'msg' => 'Mensagem Deletada com sucesso!',
+            'status' => 'success'
+        ]);
     }
 }
