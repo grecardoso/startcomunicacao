@@ -1,0 +1,1848 @@
+    <!DOCTYPE html>
+
+<html lang="pt-br" class="bg-faded">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"75d8da7133","applicationID":"12376524","transactionName":"Zl1aYkcCCxJXBUNRXV8XdWB2TCMIWgN6WVxQX11EdgwLFUQJW1RXQxdxWFEGHQ==","queueTime":0,"applicationTime":1338,"ttGuid":"794B59421472DD9C","agent":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Umbler - Gerenciador de Arquivos</title>
+    <!--[if lt IE 9]>
+           <script src="https://cdn.jsdelivr.net/g/excanvas@r3(excanvas.compiled.js),html5shiv@3.7.3"></script>
+           <script src="https://cdn.jsdelivr.net/g/respond@1.4.2,rem@1.3.4"></script>
+           <script src="https://cdn.jsdelivr.net/skrollr.ie/1.0.0/skrollr.ie.min.js"></script>
+       <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://static.umbler.com/umbootstrap/themes/umbler-app/dist/css/theme.min.css?v2">
+    <link href="/src/css/main.min.css" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="72x72" href="/Images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/Images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/Images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" href="/Images/favicons/favicon-96x96.png" type="image/png" />
+
+    <link rel="manifest" href="/Images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#f7faff">
+    <meta name="msapplication-TileImage" content="/Images/favicons/ms-icon-310x310.png">
+    <meta name="theme-color" content="#557cf2"> 
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    
+</head>
+
+<body class="pt-navbar bg-faded">
+            <input type="hidden" id="intercom_email" value="rodsoadev@outlook.com" />
+        <input type="hidden" id="intercom_created_at" value="1441588162" />
+        <input type="hidden" id="intercom_user_hash" value="C1A9846FA647329FFD3D1CB4AD00C14DD5499BBA9E0AA948684B6F583C9BD753" />
+        <input type="hidden" id="intercom_name" value="Rodrigo Soares Souza" />
+    <!-- App Google Tag Manager -->
+        <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-P6M9WT" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>
+            window.userEmailTagManager = 'rodsoadev@outlook.com'; //usado no Inspectlet
+
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-P6M9WT'); 
+        </script>
+    <!-- End App Google Tag Manager -->
+
+
+    <nav class="navbar navbar-fixed-top navbar-dark bg-primary p-0 px-3">
+        <div class="flex-xs flex-xs-middle flex-xs-between navbar-content">
+            <button class="hamburger hamburger--elastic float-xs-left hidden-lg-up mr-2" type="button" aria-label="Menu" aria-controls="navigation">
+                <span class="hamburger-box align-text-bottom">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <div id="umbler-logo-container">
+                <a href="/">
+                    <svg class="img-svg img-2x img-inverse-primary align-text-bottom">
+                        <use xlink:href="/Images/sprite-umbler.svg#img-umbler-favicon"></use>
+                    </svg>
+                </a>
+            </div>
+            <div id="disabled-notification-container" class="ml-auto mr-3 flex-xs flex-xs-middle hidden-md-down">
+                <div class="hidden-xs-up">
+                    <span class="text-white mr-1 hidden-sm-down">Voc&#234; possui servi&#231;os desativados!</span>
+                    <small class="text-white mr-1 hidden-md-up">Voc&#234; possui servi&#231;os desativados!</small>
+                    <a class="btn btn-sm btn-success" href="#" role="button">Recarregue agora</a>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-header flex-xs flex-xs-middle">
+                <li class="nav-item hidden-sm-down text-decoration-none" data-toggle="tooltip" title="Indique seus amigos" data-placement="bottom">
+                    <a href="#" id="earncredict" class="text-white" data-toggle="modal" data-target="#modalEarncredit" data-backdrop="false">
+                        <svg class="img-svg umbler-img-pulse" width="25" height="25">
+                            <use xlink:href="/Images/sprite-umbler.svg#img-umbler-heart"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li id="total-customer-credit" class="nav-item hidden-sm-down text-decoration-none" data-notification-type="credits" data-placement="bottom">
+                    <span class="loader-umbler ml-0 mr-1 is-inverted"></span>
+                </li>
+                <li class="nav-item hidden-sm-down text-decoration-none">
+                    <a href="#" id="btn-recharge-modal" class="btn btn-success btn-sm" data-title="Adicionar créditos">
+                        Adicionar créditos
+                    </a>
+                </li>
+                <li class="nav-item text-decoration-none">
+                    <div class="tag-status-block mr-0" data-notification-type="phone-not-confirmed">
+                        <span class="tag-status hidden-xs-up"></span>
+                        <div class="dropdown">
+                            
+
+<a href="#" class="btn bg-primary-dark gravatar rounded-circle btn-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div id="img-two-letters-menu-mini-thumb" class="letters-gravatar">RO</div>
+</a>
+
+<div class="dropdown-menu dropdown-menu-right py-0 mt-1">
+    <div class="dropdow-menu-content user-info">
+        <div class="px-3 pt-3 pb-2 user-info-content flex-sm flex-sm-middle">
+            <div class="pr-3 hidden-sm-down">
+                <figure class="mb-0">
+                        <div class="text-md-center pos-relative">
+                            <a class="btn btn-primary rounded-circle flex-xs flex-xs-center flex-xs-middle" href="/settings/changeuserdata" style="width: 65px; height: 65px;">
+                                <span id="img-two-letters-menu-thumb" class="">RO</span>
+                                <div class="fileupload fileupload-new d-inline" data-provides="fileupload" style="display: none;">
+                                    <label class="btn btn-xs btn-accent btn-change-photo m-0">
+                                        Alterar<input id="inputFile" type="file" name="file" style="display: none">
+                                    </label>
+                                </div>
+                                <div id="upload"></div>
+                            </a>
+                        </div>
+                </figure>
+            </div>
+            <div>
+                <a href="/settings/changeuserdata" class="d-block">
+                    <h4 id="customer-name" class="text-ellipsis">Rodrigo Soares Souza</h4>
+                    <span id="customer-email" class="text-gray text-ellipsis">rodsoadev@outlook.com</span>
+                    <span href="/settings/changeuserdata" class="d-block mt-1">
+                        <span id="customer-cellphone" class="customer-cellphone-format text-muted">
+                                <small>5588993339064</small>
+                                <input type="hidden" value="+5588993339064" />
+                        </span>
+                    </span>
+                </a>
+                
+                <a id="confirm-phone-button" class="btn btn-xs btn-outline-danger mt-1 hidden-xs-up" href="/account/resendconfirmphonecode" role="button">Confirmar o telefone</a>
+            </div>
+        </div>
+        <div class="list-group">
+            <a href="/settings/changeuserdata" class="list-group-item px-3 b-0">
+                <small class="icon icon-collapse-arrow-up rotate-90cw float-xs-right mr-1 text-primary-light"></small>
+                Meu perfil
+            </a>
+            <a href="/settings/history" class="list-group-item px-3 b-0">
+                <small class="icon icon-collapse-arrow-up rotate-90cw float-xs-right mr-1 text-primary-light"></small>
+                Histórico financeiro
+            </a>
+            <a href="/payment" class="list-group-item px-3 b-0">
+                <small class="icon icon-collapse-arrow-up rotate-90cw float-xs-right mr-1 text-primary-light"></small>
+                Recarga automática
+            </a>
+            <a href="/alerts" class="list-group-item px-3 b-0">
+                <small class="icon icon-collapse-arrow-up rotate-90cw float-xs-right mr-1 text-primary-light"></small>
+                Alertas
+            </a>
+        </div>
+        <div class="card-footer p-3">
+            <a href="/access" class="btn btn-sm btn-primary float-xs-left" role="button">
+                <i class="icon icon-unlock-alt margin-sm-r"></i>
+                Compartilhar acesso
+            </a>
+            <a class="btn btn-sm btn-secondary float-xs-right" id="logoffButton" href="#" role="button">
+                Sair
+            </a>
+        </div>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- link indique amigS2 -->
+
+<div class="modal fade fullsize-modal" id="modalEarncredit" role="dialog" aria-hidden="true" tabindex="-1">
+    <button type="button" class="btn-close m-2 m-lg-4" data-dismiss="modal" aria-label="Close">
+        <span class="icon icon-close icon-3x"></span>
+        <span class="btn-close-label hidden-sm-down">esc</span>
+    </button>
+    <div class="modal-dialog modal-lg pt-3 py-md-5">
+        <div class="modal-header">
+            <h1 class="modal-title">Indique um amigo e ganhe R$ 25</h1>
+        </div>
+        <div class="modal-body" id="content-wrap-earncredits">
+            <div class="row">
+                <div class="col-xs-12 col-lg-9">
+                    <p>Oferecemos diversos meios para você divulgar a seus amigos e quando seu amigo indicado alcançar R$ 25 em pagamento, <span class="font-bold">você ganha R$ 25 :)</span></p>
+
+                    <ol class="list-timeline mt-3">
+                        <li>
+                            <!-- step 1 -->
+                            <!-- URL de indicação -->
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h2 class="h4 list-title">URL de indicação</h2>
+                                </div>
+                                <div id="tab-referafriendtop-link" class="col-xs-12">
+                                    <input type="text" value="https://app.umbler.com/u/8kwzldpk" id="link-refer-top" class="form-control" readonly />
+                                    <small class="d-block text-muted mt-1">Cadastros realizados atrav&#233;s desse link geram cr&#233;ditos para voc&#234;.</small>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <h2 class="h4 list-title">Adicione o badge da Umbler no seu site</h2>
+                            <!-- step 2 -->
+                            <!-- Adicione o badge da Umbler -->
+                            <div id="tab-brand">
+                                <div class="bg-gray-lightest flex-xs flex-xs-middle rounded-left mb-2 clearfix">
+                                    <div class="col-xs-12 col-sm-6 p-0 py-2">
+                                        <div class="row mb-2 flex-xs flex-xs-middle">
+                                            <div class="col-xs-4 text-xs-center">
+                                                <span class="text-size-sm ml-1">Logo</span>
+                                            </div>
+                                            <div class="col-xs-8 flex-xs flex-xs-around flex-xs-middle">
+                                                <div class="colorbadge colored float-xs-left mr-2"></div>
+                                                <div class="float-xs-left my-0">
+                                                    <input id="brand-cb" type="checkbox" class="js-switch-brand" />
+                                                </div>
+                                                <div class="colorbadge black-white float-xs-left ml-2"></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-4 text-xs-center">
+                                                <span class="text-size-sm ml-1">Fundo</span>
+                                            </div>
+                                            <div class="col-xs-8 flex-xs flex-xs-around flex-xs-middle">
+                                                <div class="colorbadge white float-xs-left mr-2"></div>
+                                                <div class="float-xs-left my-0">
+                                                    <input id="brand-color-cb" type="checkbox" class="js-switch-brand" />
+                                                </div>
+                                                <div class="colorbadge black float-xs-left ml-2"></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 p-0 text-xs-center">
+                                        <div id="img-examaple-div" class="card text-xs-center p-3 m-2">
+                                            <img id="img-brand-example" src="https://static.umbler.com/brand/umbler-badges/umbler-badge-hostedby-light-bg.png" width="100" alt="Hosted by Umbler" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-1">
+                                    <pre id="html-code-badge-exemple" class="text-size-sm mt-1 code-highlighter theme-dark language-markup"></pre>
+                                    <small class="text-important">Coloque esse c&#243;digo no seu site para ganhar cr&#233;ditos por indica&#231;&#245;es.</small>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <h2 class="h4 list-title">Compartilhe nas redes sociais</h2>
+                            <!-- step 3 -->
+                            <!-- Compartilhe nas redes sociais -->
+                            <div class="row">
+                                <div class="col-lg-3 py-1 py-md-0">
+                                    <a class="btn btn-facebook btn-block" href="javascript:fbShare('https://app.umbler.com/u/8kwzldpk', 'Fb Share', 'Facebook share popup', '', 520, 350)" title="Compartilhe a Umbler no Facebook">
+                                        <i class="icon icon-brand-facebook mr-1"></i> Facebook
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 py-1 py-md-0">
+                                    <a class="btn btn-twitter btn-block" href="javascript:twShare('https://app.umbler.com/u/8kwzldpk', 'Experimente grátis a @umbler. Cloud Hosting por demanda feito para agências e desenvolvedores', 'Twitter share popup', 'https://app.umbler.com/Images/umblerito/top_menu/top_3.png', 550, 450)" title="Compartilhe a Umbler no Twitter">
+                                        <i class="icon icon-brand-twitter mr-1"></i>Twitter
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 py-1 py-md-0">
+                                    <a class="btn btn-google btn-block" href="javascript:gpShare('https://app.umbler.com/u/8kwzldpk', 'g+ Share', 'g+ share popup', 'https://app.umbler.com/Images/umblerito/top_menu/top_3.png', 550, 450)" title="Compartilhe a Umbler no Google+">
+                                        <i class="icon icon-brand-google mr-1"></i>Google
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 py-1 py-md-0">
+                                    <a class="btn btn-linkedin btn-block" href="javascript:liShare('https://app.umbler.com/u/8kwzldpk', 'Experimente grátis a @umbler. Cloud Hosting por demanda feito para agências e desenvolvedores', 'LinkedIn share popup', 'https://app.umbler.com/Images/umblerito/top_menu/top_3.png', 550, 450)" title="Compartilhe a Umbler no Linkedin">
+                                        <i class="icon icon-brand-linkedin mr-1"></i>Linkedin
+                                    </a>
+                                </div>
+                            </div>
+
+                        </li>
+
+                        <li>
+                            <h2 class="h4 list-title">Indique para um amigo por email</h2>
+                            <!-- step 4 -->
+                            <!-- Indique para um amigo por email -->
+                            <div id="tab-referafriendtop-email">
+<form action="/core/home/referafriendtop" data-ajax="true" data-ajax-begin="toggleToProcessButton(&#39;#btnAddReferAFriendTop&#39;, &#39;&#39;)" data-ajax-failure="toggleToNormalButton(&#39;#btnAddReferAFriendTop&#39;)" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#refer-a-friend-top-form" id="form1" method="post">                                    <div id="refer-a-friend-top-form">
+                                        
+
+
+<div id="divFriendEmail" class="form-group mb-0 ">
+    <div class="input-group">
+        <input autocomplete="off" class="form-control " data-val="true" data-val-required="E-mail não informado." id="FriendEmail" maxlength="100" name="FriendEmail" placeholder="Email de um amigo" type="text" value="" />
+        <span class="input-group-btn">
+            <input type="submit" class="btn btn-accent" id="btnAddReferAFriendTop" value="Indicar">
+        </span>
+    </div>
+
+    <span class="form-control-feedback">
+        <span class="field-validation-valid" data-valmsg-for="FriendEmail" data-valmsg-replace="true"></span>
+    </span>
+
+</div>   
+<small class="text-muted">Indique a Umbler por e-mail e ganhe cr&#233;ditos por indica&#231;&#245;es.</small>
+
+
+                                    </div>
+</form>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-3 text-xs-center hidden-md-down">
+                    <img src="/Images/icons/img-developer-woman.png" width="110" class="center-table " />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="menu-app" class="is-open">
+    <div id="panelbar-actions">
+        <div class="input-group mb-1">
+            <span class="input-group-addon"><span class="icon icon-search font-bold text-muted"></span></span>
+            <input type="text" id="panel-bar-search" class="form-control "  autocomplete="off" placeholder="Filtrar dom&#237;nio">
+        </div>
+
+        <div class="flex-xs flex-xs-middle pos-relative">
+            <h3 class="divider divider-left">Dom&#237;nios</h3>
+            <div class="bg-gray-lightest pl-3 pos-absolute right">
+                <a href="javascript:;" class="btn btn-accent btn-fab btn-sm" role="button" data-toggle="modal" data-target="#modalAddIdentifier" ata-backdrop="false">
+                    <span class="icon icon-add"></span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="perfect-scroll-container col-md-12 px-0">
+
+        <div class="perfect-scroll">
+            <ul class="nav nav-pills nav-stacked nav-domains">
+                
+
+<li class="nav-item with-html-tooltip">
+    <a aria-expanded="False" class="nav-link collapsed url topTempIdentifier text-ellipsis" data-ajax="true" data-ajax-begin="return checkIfPlatformIsNotLoaded(&#39;ulsistemawhatsapp_com&#39;);" data-ajax-failure="redirectToLogin" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-success="OpenPlatform(&#39;ulsistemawhatsapp_com&#39;);" data-ajax-update="#ulsistemawhatsapp_com" data-content="" data-original-title="" data-placement="top" data-selector="false" data-target="#ulsistemawhatsapp_com" data-toggle="collapse" data-trigger="hover" href="/sistemawhatsapp.com/account/panelbaritem" rel="tooltip"><span>sistemawhatsapp.com</span></a>
+    <ul class="nav collapse" id="ulsistemawhatsapp_com" aria-expanded="false">
+        <li class="nav-item">
+            <a class="nav-link text-muted loading" href="#">
+                <span class="loader-umbler mr-1 "></span>Carregando...
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item with-html-tooltip">
+    <a aria-expanded="False" class="nav-link collapsed url topTempIdentifier text-ellipsis" data-ajax="true" data-ajax-begin="return checkIfPlatformIsNotLoaded(&#39;ulhorus_samhost_info&#39;);" data-ajax-failure="redirectToLogin" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-success="OpenPlatform(&#39;ulhorus_samhost_info&#39;);" data-ajax-update="#ulhorus_samhost_info" data-content="" data-original-title="" data-placement="top" data-selector="false" data-target="#ulhorus_samhost_info" data-toggle="collapse" data-trigger="hover" href="/horus.samhost.info/account/panelbaritem" rel="tooltip"><span>horus.samhost.info</span></a>
+    <ul class="nav collapse" id="ulhorus_samhost_info" aria-expanded="false">
+        <li class="nav-item">
+            <a class="nav-link text-muted loading" href="#">
+                <span class="loader-umbler mr-1 "></span>Carregando...
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item with-html-tooltip">
+    <a aria-expanded="False" class="nav-link collapsed url topTempIdentifier text-ellipsis" data-ajax="true" data-ajax-begin="return checkIfPlatformIsNotLoaded(&#39;ulreintegra_samhost_info&#39;);" data-ajax-failure="redirectToLogin" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-success="OpenPlatform(&#39;ulreintegra_samhost_info&#39;);" data-ajax-update="#ulreintegra_samhost_info" data-content="" data-original-title="" data-placement="top" data-selector="false" data-target="#ulreintegra_samhost_info" data-toggle="collapse" data-trigger="hover" href="/reintegra.samhost.info/account/panelbaritem" rel="tooltip"><span>reintegra.samhost.info</span></a>
+    <ul class="nav collapse" id="ulreintegra_samhost_info" aria-expanded="false">
+        <li class="nav-item">
+            <a class="nav-link text-muted loading" href="#">
+                <span class="loader-umbler mr-1 "></span>Carregando...
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item with-html-tooltip">
+    <a aria-expanded="False" class="nav-link collapsed url topTempIdentifier text-ellipsis" data-ajax="true" data-ajax-begin="return checkIfPlatformIsNotLoaded(&#39;ulrodrigosoares_eti_br&#39;);" data-ajax-failure="redirectToLogin" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-success="OpenPlatform(&#39;ulrodrigosoares_eti_br&#39;);" data-ajax-update="#ulrodrigosoares_eti_br" data-content="" data-original-title="" data-placement="top" data-selector="false" data-target="#ulrodrigosoares_eti_br" data-toggle="collapse" data-trigger="hover" href="/rodrigosoares.eti.br/account/panelbaritem" rel="tooltip"><span>rodrigosoares.eti.br</span></a>
+    <ul class="nav collapse" id="ulrodrigosoares_eti_br" aria-expanded="false">
+        <li class="nav-item">
+            <a class="nav-link text-muted loading" href="#">
+                <span class="loader-umbler mr-1 "></span>Carregando...
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item with-html-tooltip">
+    <a aria-expanded="False" class="nav-link collapsed url topTempIdentifier text-ellipsis" data-ajax="true" data-ajax-begin="return checkIfPlatformIsNotLoaded(&#39;ulsamhost_info&#39;);" data-ajax-failure="redirectToLogin" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-success="OpenPlatform(&#39;ulsamhost_info&#39;);" data-ajax-update="#ulsamhost_info" data-content="" data-original-title="" data-placement="top" data-selector="false" data-target="#ulsamhost_info" data-toggle="collapse" data-trigger="hover" href="/samhost.info/account/panelbaritem" rel="tooltip"><span>samhost.info</span></a>
+    <ul class="nav collapse" id="ulsamhost_info" aria-expanded="false">
+        <li class="nav-item">
+            <a class="nav-link text-muted loading" href="#">
+                <span class="loader-umbler mr-1 "></span>Carregando...
+            </a>
+        </li>
+    </ul>
+</li>
+                
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade fullsize-modal" id="modalAddIdentifier" role="dialog" data-backdrop="false" aria-hidden="true" tabindex="-1">
+    <button type="button" class="btn-close m-2 m-lg-4" data-dismiss="modal" aria-label="Close">
+        <span class="icon icon-close icon-3x"></span>
+        <span class="btn-close-label hidden-sm-down">esc</span>
+    </button>
+    <div class="modal-dialog modal-lg pt-3 py-md-5">
+        <div class="modal-header">
+            <div class="row flex-xs flex-xs-center">
+                <div class="col-xs-10">
+                    <h1 class="modal-title">
+                        Qual é o seu <b class="text-gray-dark">domínio</b> ou <b class="text-gray-dark">subdomínio</b>?
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="row flex-xs flex-xs-center">
+                <div class="col-xs-10">
+                    <div id='registerIdentifier'>
+<form action="/sistemawhatsapp.com/account/identifier/create" data-ajax="true" data-ajax-begin="toggleToProcessButton(&#39;#btnCreateIdentifier&#39;);$(&#39;#btnCreateIdentifier&#39;).remove()" data-ajax-complete="showErrorTooltip();EnterIdentifierAndValidateInWhois()" data-ajax-failure="handleAjaxError(ajaxContext);setAddDomainEvents();" data-ajax-mode="replace" data-ajax-success="success()" data-ajax-update="#registerIdentifier" id="formCreateIdentifier" method="post">    <div id="messageBoxIdentifierAvailable" style="display: none;"></div>
+            <div class="mb-2">
+                <div class="add-domain">
+                    
+
+
+<div id="divIdentifier" class="form-group ">
+
+
+<input class="form-control form-control-lg" data-val="true" data-val-length="O campo &#39;&#39; precisa ter entre 2 e 100 caracteres. " data-val-length-max="100" data-val-length-min="2" data-val-regex="Domínio incorreto." data-val-regex-pattern="^([a-zA-Z0-9\-_]\.?)*([a-zA-Z0-9][\-_]?){1,}(\.[a-zA-Z0-9]{2,18}){1,3}$" data-val-required="Campo &#39;&#39; não foi informado. " id="Identifier" maxlength="100" name="Identifier" pattern="^([a-zA-Z0-9\-_]\.?)*([a-zA-Z0-9][\-_]?){1,}(\.[a-zA-Z0-9]{2,18}){1,3}$" placeholder="Ex: seusite.com ou blog.seusite.com" type="text" value="" />
+
+                <span class="form-control-feedback">
+                    <span class="field-validation-valid" data-valmsg-for="Identifier" data-valmsg-replace="true"></span>
+                </span>
+
+                    <small id="IdentifierHelp" class="form-text text-muted">Pode ser tanto um domínio que você já possui para hospedar o site e/ou e-mails, quanto um domínio disponível para registro.</small>
+            </div>
+                </div>
+            </div>
+            <div id="pnlAdvancedOptions" class="wrap animated fadeIn duration-300 hidden-xs-up mb-1">
+                <div id="alphabeticContent">
+                    <ul id="alphabeticNav" class="list-inline m-0 mt-2 pb-1">
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">accountants</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">actor</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">adm.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">adv.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">agency</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">agr.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">am.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">arq.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">art.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ato.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">attorney</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">auction</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">audio</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">bar</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">beer</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">best</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">bharat</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">bid</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">bio</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">bio.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">biz</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">black</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">blackfriday</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">blog.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">blue</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">bmd.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">boutique</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">build</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">buzz</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">bz</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">capetown</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">career</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">casa</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">cc</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">center</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">chinesemobile</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">chineseonline</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">chineseorg</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">chinesewebsite</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">christmas</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">cim.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">click</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">cloud</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">club</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">cn.com</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">cng.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">cnt.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">college</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">com</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">com.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">company</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">consulting</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">cooking</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">coop.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">country</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">credit</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">creditcard</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">cricket</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">cyrillicorg</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">dance</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">delivery</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">democrat</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">dentist</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">desi</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">design</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">diet</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">digital</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">download</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">durban</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ecn.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">edu.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">email</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">energy</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">eng.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">engineer</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">esp.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">etc.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">eti.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">express</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">family</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fans</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">far.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fashion</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">feedback</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fishing</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fit</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fitness</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">flog.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">flowers</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fm.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fnd.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">forsale</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fot.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fst.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">fun</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">futbol</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">g12.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">garden</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ggf.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">gift</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">gives</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">global</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">gold</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">gov.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">gratis</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">guitars</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">guru</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">haus</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">help</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">hiphop</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">horse</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">host</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">hosting</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">imb.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">immobilien</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">in</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ind.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">inf.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">info</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ink</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">investments</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">joburg</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">jor.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">juegos</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">kaufen</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">kim</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">la</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">lawyer</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">legal</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">lel.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">lgbt</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">life</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">link</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">live</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">loan</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">loans</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">lol</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">london</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">love</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">luxury</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">market</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">marketing</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">markets</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">mat.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">me</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">med.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">men</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">menu</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">mil.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">mn</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">mobi</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">moda</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">mom</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">mus.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">name</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">net</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">net.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">news</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ninja</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">nom.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">not.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ntr.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">odo.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">one</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">online</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ooo</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">org</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">org.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">party</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">photo</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">photos </span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">pics</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">pictures</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">pink</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">pizza</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ppg.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">press</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">pro.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">property</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">psc.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">psi.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">pub</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">pw</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">qsl.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">quebec</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">racing</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">rec.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">red</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">repair</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">rest</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">review</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">reviews</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">rip</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">rocks</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">rodeo</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">sagathan</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">sale</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">sc</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">science</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">sexy</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">shabaka</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">shiksha</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">site</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">slg.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">social</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">software</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">solutions</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">soy</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">space</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">srv.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">store</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">studio</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">surf</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">sx</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">systems</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">tattoo</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">team</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">tech</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">tmp.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">today</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">tokyo</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">tools</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">top</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">trade</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">trd.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">tur.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">tv</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">tv.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">uno</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">vc</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">vegas</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">vet.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">vlog.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">vodka</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">wang</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">webcam</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">website</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">wiki</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">wiki.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">win</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">work</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">works</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">ws</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">wtf</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">xxx</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">xyz</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">zlg.br</span></a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a href="javascript:;" class="btn btn-outline-primary btn-xs">.<span class="tld font-normal">zone</span></a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div class="small">
+                    <a id="btnAdvancedOptions" href="javascript:;">Ver extensões que registramos...</a>
+                </div>
+            </div>
+            <input id="btnCreateIdentifier" type="submit" class="btn btn-primary btn-block btn-lg" onclick="AbortRequestIdentifierAvailable()" value="Adicionar" disabled="disabled" />
+</form></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div id="container" class="container py-2 pt-lg-3">
+            
+
+<div class="card">
+    <div class="card-block pb-3">
+
+<input id="identifier-name" name="Identifier" type="hidden" value="sistemawhatsapp.com" />
+<input id="current-popover" name="CurrentPopover" type="hidden" value="" />
+
+<div id="website-dashboard">
+    <div class="col-md-2 text-xs-center mb-4 mb-md-0">
+        <div class="text-xs-center float-md-left">
+            <span class="tag-status-block mr-0">
+                <span class="tag-status tag-status-success"></span>
+                <svg class="img-svg img-4x d-block " >
+                    <use xlink:href="/Images/sprite-logos.svg#php"></use>
+                </svg>
+            </span>
+            
+
+
+
+
+
+<div id="form-group-website-version" class="add-domain ">
+    
+    <div class="input-group">
+
+        <div class="btn-group small">
+            <button type="button" class="btn btn-secondary btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span id="btn-dropdown-mini" class="small font-bold">PHP v.7.0</span>
+            </button>
+            <div class="dropdown-menu">
+                    <a class="dropdown-item " href="#" data-value="54"><span class="small"><small>PHP v.5.4</small></span></a>
+                    <a class="dropdown-item " href="#" data-value="55"><span class="small"><small>PHP v.5.5</small></span></a>
+                    <a class="dropdown-item " href="#" data-value="56"><span class="small"><small>PHP v.5.6</small></span></a>
+                    <a class="dropdown-item active" href="#" data-value="70"><span class="small"><small>PHP v.7.0</small></span></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<input autocomplete="off" class="form-control disabled watched-taskId" data-task-callback="" data-task-element="#form-group-website-version button" data-task-errormessage="Ocorreu um erro na alteração da versão do php. Já fomos notificados e dentro de alguns minutos tudo estará resolvido!" data-task-message="Aguardando..." data-task-onBegin="" data-val="true" data-val-required="Campo &#39;[pt-BR: TaskId]&#39; não foi informado. " id="php-version-taskid" maxlength="100" name="TaskId" placeholder="" readonly="True" type="hidden" value="0" />
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <div class="col-md-4 text-xs-center text-md-left"> 
+            <h3 class="text-break text-ellipsis ml-md-1">sistemawhatsapp.com</h3>
+            
+
+
+<div class="dropdown" aria-labelledby="responsiveNavbarDropdown">
+    <button type="button" title="urls" class="btn btn-sm btn-link dropdown-toggle text-muted dropdown-list-urls" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="text-ellipsis d-inline-block pos-relative">
+            <span class="icon icon-lock"></span>
+            http://sistemawhatsapp.com
+            <a href="/sistemawhatsapp.com/domain" class="nav-link dropdown-toggle" style="display:none">Registre agora!</a>
+        </div>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+        <span class="dropdown-item">
+                <i class="icon icon-lock text-gray-light mr-1"></i>
+                    <small class="text-line-through">
+                        <span class="text-success-dark">https</span>://sistemawhatsapp.com
+                    </small>
+                    <a href="/sistemawhatsapp.com/website/ssl" class="float-md-right text-muted small"><small class="tag tag-primary align-bottom tag-pill">Configure!</small></a>
+
+        </span>
+
+        <span class="dropdown-item">
+            <i class="icon icon-expand-link mr-1"></i>
+            <small>
+                    <a href="http://sistemawhatsapp-com.umbler.net" target="_blank">http://sistemawhatsapp-com.umbler.net</a>
+            </small>
+        </span>
+        <span class="dropdown-item">
+            <i class="icon icon-expand-link mr-1 text-success-dark"></i>
+            <small>
+                <a href="https://sistemawhatsapp-com.umbler.net" target="_blank" id="sharedSSLEnabledLink" style="display:none"><span class="text-success-dark">https</span>://sistemawhatsapp-com.umbler.net</a>
+                <span id="sharedSSLDisabledLink" class="text-line-through" style="display:"><span class="text-success-dark">https</span>://sistemawhatsapp-com.umbler.net</span>
+            </small>
+
+            <ul class="gIco btn-extra-small null-padding right" style="display:none">
+                <li class="pad-no-v"><a id="activeSharedSSL" class="btn btn-simple ">ON</a></li>
+                <li class="pad-no-v"><a id="disableSharedSSL" class="btn btn-simple active">OFF</a></li>
+            </ul>
+            <span class="idTask" id="idTaskSharedSSL" style="display: none">0</span>
+
+        </span>
+        <span class="dropdown-item" onclick="openModalIdea('57139');">
+            <img src="https://static.umbler.com/umbootstrap/assets/svg/sprite-umbler/img-tag-feedback.svg" width="30" height="30" alt="img-tag-feedback" class="float-md-right">
+            <i class="icon icon-beaker-science mr-1"></i>
+            <small class="text-line-through">
+                http://labs.sistemawhatsapp.com
+            </small>
+        </span>
+    </div>
+</div>
+            
+
+<input type="hidden" id="DasboardUrl" value="/sistemawhatsapp.com/apps/website-header" />
+<div id="nav-play-stop" class="btn-group-sm btn-group mt-3 ml-md-1" role="group">
+        <button type="button" id="btn-stop-website-modal" title="pausar webiste" class="btn btn-secondary" data-toggle="modal" data-target="btn-stop-website-modal">
+            <span class="icon icon-video-control-pause-fill"></span>
+        </button>
+
+    <button type="button" id="btn-restart-website-modal" title="reiniciar website" class="btn btn-secondary" >
+        <span class="icon icon-text-undo"></span>
+    </button>
+
+    <div id="btn-config-server" class="btn-group" title="mais a&#231;&#245;es" role="group">
+        <button type="button" class="btn btn-secondary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="icon icon-nav-show-horizontal"></span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btn-config-server">
+            
+
+
+<input type="hidden" id="ProductList" value="{&quot;CloudSitePhpExtraLarge&quot;:{&quot;PricePerHour&quot;:&quot;1,3151&quot;,&quot;PricePerMonth&quot;:&quot;960&quot;},&quot;CloudSitePhpExtraSmall&quot;:{&quot;PricePerHour&quot;:&quot;0,0822&quot;,&quot;PricePerMonth&quot;:&quot;60&quot;},&quot;CloudSiteAspNetLarge&quot;:{&quot;PricePerHour&quot;:&quot;0,6575&quot;,&quot;PricePerMonth&quot;:&quot;480&quot;},&quot;CloudSiteAspNetMedium&quot;:{&quot;PricePerHour&quot;:&quot;0,3288&quot;,&quot;PricePerMonth&quot;:&quot;240&quot;},&quot;CloudSiteAspNetSmall&quot;:{&quot;PricePerHour&quot;:&quot;0,1644&quot;,&quot;PricePerMonth&quot;:&quot;120&quot;},&quot;ContainerOnDemandExtraSmall&quot;:{&quot;PricePerHour&quot;:&quot;0,0082&quot;,&quot;PricePerMonth&quot;:&quot;6&quot;},&quot;ContainerOnDemandLarge&quot;:{&quot;PricePerHour&quot;:&quot;0,0658&quot;,&quot;PricePerMonth&quot;:&quot;48&quot;},&quot;ContainerOnDemandMedium&quot;:{&quot;PricePerHour&quot;:&quot;0,0329&quot;,&quot;PricePerMonth&quot;:&quot;24&quot;},&quot;ContainerOnDemandSmall&quot;:{&quot;PricePerHour&quot;:&quot;0,0164&quot;,&quot;PricePerMonth&quot;:&quot;12&quot;}}" />
+<input id="MachineSize" name="MachineSize" type="hidden" value="PP" />
+<input id="CurrentPlatform" name="CurrentPlatform" type="hidden" value="php-Apache" />
+
+
+
+
+<input autocomplete="off" class="form-control disabled watched-taskId" data-task-callback="window.umbler.dashboard.onTaskCompleted" data-task-element="#nav-play-stop button" data-task-errormessage="A tarefa ainda não foi concluída... Já fomos notificados e dentro de alguns minutos tudo estará resolvido!" data-task-message="Aguardando..." data-task-onBegin="" data-val="true" data-val-required="Campo &#39;[pt-BR: LastTaskId]&#39; não foi informado. " id="change-server-size-taskid" maxlength="100" name="LastTaskId" placeholder="" readonly="True" type="hidden" value="0" />
+
+
+
+
+
+
+
+
+
+<input data-val="true" data-val-required="Campo &#39;[pt-BR: CurrentNumerOfInstances]&#39; não foi informado. " id="CurrentNumerOfInstances" name="CurrentNumerOfInstances" type="hidden" value="1" />
+
+
+<a href="javascript:;" class="dropdown-item" id="btn-change-server-type">
+    <span class="icon icon-expand icon-muted mr-1"></span> Redimensionar
+</a>
+
+<div id="change-server-type-modal" class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="display: none">
+    <div class="modal-header">
+        <h1 class="modal-title mb-2">Redimensionamento</h1>
+    </div>
+    <div class="modal-body">
+        <div id="div-slider">
+            <div class="animated fadeInDown duration-300" id="container-machine-size">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 px-3 mb-4 pb-1">
+                        <h6>Tamanho da inst&#226;ncia</h6>
+                        <div id="slider-serverSize" class="slider-bg-accent"></div>
+                    </div>
+
+                        <div class="col-xs-12 col-md-3">
+                            <ul class="list-unstyled">
+                                <li class="mb-1">
+                                    <span class="icon icon-harddisk icon-muted icon-2x mr-1"></span>
+                                    <span class="align-super">Disco: <b class="text-gray-dark" id="hd-size">60 GB</b></span>
+                                </li>
+                                <li class="mb-1">
+                                    <span class="icon icon-computer-chip icon-muted icon-2x mr-1"></span>
+                                    <span class="align-super">CPU: <b class="text-gray-dark" id="cpu-size">1 x 2.4 GHz</b></span>
+                                </li>
+                                <li class="mb-1">
+                                    <span class="icon icon-ram icon-muted icon-2x mr-1"></span>
+                                    <span class="align-super">RAM: <b class="text-gray-dark" id="ram-size">1 GB</b></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <ul class="list-unstyled">
+                                <li class="mb-1">
+                                    <svg class="img-svg mr-1" width="24" height="24">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#img-umblercoin-gold"></use>
+                                    </svg>
+                                    <span class="align-super"><b class="text-gray-dark" id="price">0</b></span>
+                                </li>
+                                <li class="mb-1" id="li-max-of-websites">
+                                    <svg class="img-svg mr-1" width="24" height="24">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#img-app-site"></use>
+                                    </svg>
+                                    <span class="align-super" id="max-of-websites-span">Até <b class="text-gray-dark" id="max-of-websites">100</b> sites</span>
+                                </li>
+                                <li class="mb-1 hidden-xs-up" id="li-max-of-traffic">
+                                    <span class="icon icon-network-global icon-muted icon-2x mr-1"></span>
+                                    <span class="align-super">Tráfego: <b class="text-gray-dark" id="max-of-traffic">256</b> GB</span>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div id="div-buttons">
+                <input id="btn-current-environment" type="button" value="Ambiente Atual" class="btn btn-success btn-block btn-lg" disabled />
+            </div>
+
+            <div id="downtime-note" class="animated fadeIn hidden-xs-up">
+
+                    <div class="alert alert-danger">
+                        <span class="font-bold">Atenção</span>
+                        <p> Esta ação deixará seu site indisponível por alguns minutos, até que a migração seja concluída.</p>
+                    </div>
+                <input id="btn-confirm-server-change" type="button" value="Salvar" class="btn btn-success btn-block btn-lg">
+            </div>
+
+            <div id="message-estimate" class="alert alert-danger animated fadeIn hidden-xs-up">
+                Você não possui créditos suficientes para contratar este produto.
+            </div>
+            <div id="custom-message" class="alert alert-danger animated fadeIn hidden-xs-up">
+                Você não possui créditos suficientes para contratar este produto.
+            </div>
+        </div>
+        <div id="noFunds" class="hidden-xs-up">
+            <div class="alert alert-info animated fadeIn">
+                <p class="mb-0">
+                    Para concluir a migração do ambiente é necessário possuir pelo menos <span id="credits" class="f-bold">R$ 1,00</span> em créditos.
+                </p>
+            </div>
+            <a class="btn btn-success btn-lg btn-block" href="/payment#openmanualrecharge=true">Adicionar créditos</a>
+        </div>
+        <div id="developping" class="hidden-xs-up">
+            <div class="alert alert-info animated fadeIn">
+                <span class="font-bold">Recurso em desenvolvimento.</span>
+                <p class="mb-0">Em breve será possível realizar o upgrade ou downgrade de seu site.</p>
+            </div>
+        </div>
+        <div id="diskSpaceQuotaExceeded" class="hidden-xs-up">
+            <div class="alert alert-info animated fadeIn">
+                <span class="font-bold">Não será possível fazer o downgrade</span>
+                <p class="mb-0">O tamanho da sua máquina atual excede o tamanho da máquina para a qual você deseja migrar.</p>
+            </div>
+        </div>
+        <div id="internalError" class="hidden-xs-up">
+            <div class="alert alert-info animated fadeIn">
+                <span class="font-bold">Erro interno</span>
+                <p class="mb-0">Estamos com uma instabilidade momentânea em nosso sistema. Por favor, tente novamente mais tarde. </p>
+            </div>
+        </div>
+        <div id="stoppedServer" class="hidden-xs-up">
+            <div class="alert alert-info animated fadeIn">
+                <span class="font-bold">Servidor parado</span>
+                <p class="mb-0">Seu servidor consta com o status de parado, caso queira alterar os recursos do ambiente, basta ativá-lo. </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <a href="javascript:;" title="excluir website" class="dropdown-item" id="btn-remove-website-modal" onclick="">
+    <span class="icon icon-bin icon-muted mr-1"></span> Excluir site
+</a>
+<div id="remove-website-modal" class="hidden-xs-up">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+
+<form action="/sistemawhatsapp.com/apps/website-remove/remove" data-ajax="true" data-ajax-begin="toggleToProcessButton(&#39;#btn-remove-websiteremove&#39;);$(&#39;#websiteremove-btn-back&#39;).hide();" data-ajax-mode="replace" data-ajax-success="crud.redirectGridModal(&#39;websiteremove&#39;);" data-ajax-update="#websiteremove-action-view" id="form0" method="post">    <div class="modal-header">
+        <button id="websiteremove-btn-back" type="button" class="btn-close btn-back float-xs-right text-xs-center" data-dismiss="modal" aria-label="Voltar" title="Voltar">
+            <span class="icon icon-close icon-2x"></span>
+            <span class="btn-close-label hidden-sm-down">esc</span>
+        </button>
+        <h3 class="modal-title">Excluir website</h3>
+    </div>
+    <div class="modal-body">
+        <div class="alert alert-warning ">
+            <input id="ID" name="ID" type="hidden" value="" />
+            <span class="d-block mb-2"><span class="font-bold">Atenção:</span> Todos os arquivos e bancos de dados deste site serão excluídos permanentemente.</span><span class="d-block">Para prosseguir, digite <span class="font-bold">sistemawhatsapp.com</span> no campo abaixo.</span>
+        </div>
+            <div class="form-group mb-0">
+                <label class="w-100" for="remove-websiteremove-confirmation">
+                    <span>Confirme o endere&#231;o do website:</span>
+                </label>
+                    <input type="text" id="remove-websiteremove-confirmation" class="form-control">
+            </div>
+<input id="ConfirmRemoveItemToCompareInValidation" name="ConfirmRemoveItemToCompareInValidation" type="hidden" value="" />    </div>
+    <div class="modal-footer">
+                <a id="btn-remove-websiteremove" href="javascript:;" class="btn btn-danger btn-lg btn-block disabled">Excluir todos arquivos e bancos de dados</a>
+    </div>
+</form>
+        </div>
+    </div>
+</div>
+
+<!-- Remove Website Modal -->
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<input autocomplete="off" class="form-control disabled watched-taskId" data-task-callback="window.umbler.dashboard.onTaskCompleted" data-task-element="#nav-play-stop button" data-task-errormessage="A tarefa ainda não foi concluída... Já fomos notificados e dentro de alguns minutos tudo estará resolvido!" data-task-message="Aguardando..." data-task-onBegin="" data-val="true" data-val-required="Campo &#39;[pt-BR: IdTask]&#39; não foi informado. " id="website-manage-taskid" maxlength="100" name="IdTask" placeholder="" readonly="True" type="hidden" value="0" />
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div id="stop-website-modal" class="hidden-xs-up">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn-close btn-back float-xs-right text-xs-center" data-dismiss="modal" title="Voltar">
+                    <span class="icon icon-close icon-2x"></span>
+                    <span class="btn-close-label hidden-sm-down">esc</span>
+                </button>
+                <h3 class="modal-title">Parar  Website</h3>
+            </div>
+            <div class="modal-body pb-2">
+                <p>Você realmente deseja parar este Website?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="manage-website" class="btn btn-lg btn-primary btn-block" data-action="parar">Parar Website</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="stop-server-modal" class="hidden-xs-up">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn-close btn-back float-xs-right text-xs-center" data-dismiss="modal" title="Voltar">
+                    <span class="icon icon-close icon-2x"></span>
+                    <span class="btn-close-label hidden-sm-down">esc</span>
+                </button>
+                <h3 class="modal-title">Parar Servidor</h3>
+            </div>
+            <div class="modal-body pb-2">
+                <p>Você realmente deseja parar este Servidor?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="manage-server" class="btn btn-lg btn-primary btn-block" data-action="parar">Parar Servidor</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="restart-website-modal" class="hidden-xs-up">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn-close btn-back float-xs-right text-xs-center" data-dismiss="modal" title="Voltar">
+                    <span class="icon icon-close icon-2x"></span>
+                    <span class="btn-close-label hidden-sm-down">esc</span>
+                </button>
+                <h3 class="modal-title" id="myModalLabel">Reiniciar Website</h3>
+            </div>
+            <div class="modal-body pb-2">
+                <p>Você realmente deseja reiniciar este Website?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="restart-website" class="btn btn-lg btn-primary btn-block" data-action="reiniciar">Reiniciar</button>
+            </div>
+        </div>
+    </div>
+</div>
+                   
+    </div>
+    <div class="col-md-6 mt-4 mt-md-0"> 
+                        <div class="col-sm-4 mb-3 mb-md-0">
+            <canvas id="chart-hd" width="100%"></canvas>
+        </div>
+
+    <div class="col-sm-4 mb-3 mb-md-0">
+        <canvas id="chart-ram" width="100%"></canvas>
+    </div>
+
+    <div class="col-sm-4">
+        <canvas id="chart-cpu" width="100%"></canvas>
+    </div>
+
+    <input data-val="true" data-val-required="Campo &#39;[pt-BR: MaxMemory]&#39; não foi informado. " id="max_memory" name="MaxMemory" type="hidden" value="1024" />
+    <input data-val="true" data-val-required="Campo &#39;[pt-BR: MaxDisk]&#39; não foi informado. " id="max_disk" name="MaxDisk" type="hidden" value="61440" />   
+    </div>
+</div>
+
+</div>
+    <div class="px-md-4">        <ul id="main-submenu" class="nav nav-collapse nav-tabs nav-underline ">
+                <li class="nav-item ">
+                            <a class="nav-link " href="/sistemawhatsapp.com/website">Deploy </a>
+                </li>
+                <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Arquivos</a>
+                            <div class="dropdown-menu">
+                                    <a class="dropdown-item active" href="/sistemawhatsapp.com/website/filemanager">
+                                        <span class="icon icon icon-file-upload icon-muted mr-1"></span>Gerenciador
+                                    </a>
+                                    <a class="dropdown-item " href="/sistemawhatsapp.com/website/snapshot">
+                                        <span class="icon icon icon-synchronize-timeout icon-muted mr-1"></span>Pontos de restaura&#231;&#227;o
+                                    </a>
+                            </div>
+                </li>
+                <li class="nav-item ">
+                            <a class="nav-link " href="/sistemawhatsapp.com/database">Banco de dados </a>
+                </li>
+                <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Configura&#231;&#245;es</a>
+                            <div class="dropdown-menu">
+                                    <a class="dropdown-item " href="/sistemawhatsapp.com/website/configurations">
+                                        <span class="icon icon-slider-right icon-muted mr-1"></span>Configura&#231;&#245;es do PHP
+                                    </a>
+                                    <a class="dropdown-item " href="/sistemawhatsapp.com/website/environmentvariables">
+                                        <span class="icon icon-settings icon-muted mr-1"></span>Vari&#225;veis de ambiente
+                                    </a>
+                                    <a class="dropdown-item " href="/sistemawhatsapp.com/website/ssh">
+                                        <span class="icon icon-console icon-muted mr-1"></span>SSH
+                                    </a>
+                                    <a class="dropdown-item " href="/sistemawhatsapp.com/website/ssl">
+                                        <span class="icon icon-lock icon-muted mr-1"></span>SSL
+                                    </a>
+                                    <a class="dropdown-item " href="/sistemawhatsapp.com/website/cron">
+                                        <span class="icon icon-calendar icon-muted mr-1"></span>CRON
+                                    </a>
+                            </div>
+                </li>
+                <li class="nav-item ">
+                            <a class="nav-link " href="/sistemawhatsapp.com/website/logs">Logs </a>
+                </li>
+                <li class="nav-item ">
+                            <a class="nav-link " href="/sistemawhatsapp.com/addons">Add-ons </a>
+                </li>
+        </ul>
+
+</div>
+</div>
+
+<div class="card">
+    <div id="tab-files" class="tab-pane active" role="tabpanel">
+
+        <div id="overlay" class="full-overlay">
+            <div class="full-overlay-mask"></div>
+            <div id="file-manager-app"></div>
+
+            <div id="drag-area" class="card-block">
+                <div class="drag-area full-overlay-target">
+                    <input id="fileupload" class="hidden-xs-up" type="file" name="httpPostedFile" multiple directory webkitdirectory />
+                    <div class="media">
+                        <div class="media-left pr-3">
+                            <span class="icon icon-cloud-upload icon-4x"></span>
+                        </div>
+                        <div class="media-body">
+                            <b class="font-bold">Arraste ou clique</b> para realizar o upload dos arquivos.
+                            <small class="d-block">Voc&#234; tamb&#233;m pode realizar o upload de pastas utilizando as &#250;ltimas vers&#245;es do Google Chrome, Opera ou Microsoft Edge.</small>
+                            <small class="d-block font-bold">M&#225;x. de 100MB</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hidden-xs-up">
+<form action="/sistemawhatsapp.com/apps/file-manager/upload-file" enctype="multipart/form-data" id="single-upload-form" method="post"><input id="path" name="path" type="hidden" value="/public" />                <input id="single-fileupload" class="hidden-xs-up" type="file" name="httpPostedFile" />
+</form>        </div>
+    </div>
+</div>
+
+
+
+
+        </div>
+
+    
+    <div id="upload-progress" class="upload-progress overflow-hidden animated fadeInUp duration-300 hidden-xs-up">
+        <div class="bg-primary">
+            <div id="upload-progress-title" class="cursor-pointer">
+                <div class="row px-3 py-2 flex-xs flex-xs-middle">
+                    <div class="col-xs-10">
+                        <div class="flex-xs flex-xs-middle">
+                            <span class="h5 text-white mb-0">
+                                Progresso do Upload <span id="global-progress-counter">(0/)</span>
+                            </span>
+                            <div class="col-sm-5 hidden-xs-down">
+                                <progress id="global-progress" class="progress progress-success mb-0 ml-2" value="0" max="100"></progress>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 text-xs-right">
+                        <span class="icon icon-collapse-arrow-up icon-white"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="upload-progress-files perfect-scroll hidden-xs-up">
+            <div id="upload-dropped-message" class="pos-relative bg-white text-xs-center p-3">
+                <div class="message-text d-inline-block">
+                    <b>Processando os arquivos, aguarde...</b>
+                </div>
+            </div>
+            <div class="upload-progress-box w-100">
+                <ul class="list-group bb-lighter" id="uploading-progress-folders"></ul>
+                <ul class="list-group upload-progress-file-list" id="uploading-progress-files"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="full">
+        <section class="main  clearfix"></section>
+    </section>
+
+    <input type="hidden" id="isAuthenticated" name="isAuthenticated" value="True" />
+    <div class="modal fade fullsize-modal" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" id="modal-general" data-backdrop="false" aria-hidden="true">
+        <button type="button" class="btn-close m-2 m-lg-4" data-dismiss="modal" aria-label="Close">
+            <span class="icon icon-close icon-3x"></span>
+            <span class="btn-close-label hidden-sm-down">esc</span>
+        </button>
+         <div class="modal-dialog modal-lg pt-3 py-md-5" role="document"></div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" id="modal-general-small" aria-hidden="true">
+        <div class="modal-dialog modal-sm mt-lg-5" role="document"></div>
+    </div>
+
+<form action="/account/logoff" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="QTVA-9M7EzQc782Jyo7MzR_SBb_qezhBDcywwXadZaeZWIGKKNeQ4v1aOYkUGCXcd16zIJJMIryta8qxeguo0ySBKNfpzariuMMFNd7MZcxIc7dXE3y_aq9F4hinJ4HPUyymlw2" />        <div id="logoutModalTarget"></div>
+</form>
+    <div id="svg-trick" style="display: none"></div>
+
+    
+    <div id="file-manager-modal" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+    var _urq = _urq || [];
+    _urq.push(['initSite', 'c565392d-0b6a-40b2-a7c6-999f14d22212']);
+    (function() {
+    var ur = document.createElement('script'); ur.type = 'text/javascript'; ur.async = true;
+    ur.src = ('https:' == document.location.protocol ? 'https://cdn.userreport.com/userreport.js' : 'http://cdn.userreport.com/userreport.js');
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
+    })();
+    </script>    
+    
+    <!-- jQuery, Tether and Bootstrap JS -->
+    <!--script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script-->
+    <script>window.jQuery || document.write('<script src="https://static.umbler.com/umbootstrap/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.8/js/tether.js"></script>
+    <script src="https://static.umbler.com/umbootstrap/assets/dist/js/bootstrap.min.js"></script>
+    <script src="https://static.umbler.com/umbootstrap/themes/umbler-app/dist/js/theme.min.js"></script>
+    
+    <script src="/src/js/bundle.js?v=20171010175152"></script>
+    <script src="/src/js/payment.js?v=20171010175152"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.14.1/js/jquery.fileupload.js"></script>
+    
+    
+    
+    <script src="/src/js/Cultures/pt-BR.js?v=20171010175152"></script>
+
+
+    <script>
+        //https://codepen.io/AmeliaBR/pen/OPbrjy
+        //var div = document.getElementById("svg-trick")
+         
+
+
+        $(function () {
+            $.get("//static.umbler.com/umbootstrap/assets/svg/sprite-umbler.svg", function (data) {
+                var div = document.createElement("div");
+                div.setAttribute("class", "hidden-xs-up");
+                div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
+                document.body.insertBefore(div, document.body.childNodes[0]);
+            });
+
+            $.get("//static.umbler.com/umbootstrap/assets/svg/sprite-logos.svg", function (data) {
+                var div = document.createElement("div");
+                div.setAttribute("class", "hidden-xs-up");
+                div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
+                document.body.insertBefore(div, document.body.childNodes[0]);
+            });
+        });
+    </script>
+
+    
+    
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/mini_require.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/ace.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/ext-emmet.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/emmet-core.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/mode-html.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/mode-javascript.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/mode-css.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/mode-csharp.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/mode-java.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/mode-sql.js"></script>
+    <script src="/Areas/WebSite/Scripts/FileManager/LibAce/mode-xml.js"></script>
+
+    <script src="/src/js/filemanager.js?v=20171010175152"></script>
+    <script src="/src/js/website.js?v=20171010175152"></script>
+
+
+    
+</body>
+</html>
