@@ -19,6 +19,7 @@ Route::get('/', function() {
 
 Route::group(['middleware' => ['auth', 'auth.approved']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::delete('/global-messages', 'Admin\MessagesController@deleteAllGlobalMessages');
     
     /**
     * Users Routes
@@ -42,7 +43,6 @@ Route::group(['middleware' => ['auth', 'auth.approved']], function() {
     Route::get('/reports/{id}/download', 'Admin\ReportsController@download')->name('report.download');
     Route::get('/profile', 'Admin\UsersController@profile')->name('user.profile');
     Route::post('/profile', 'Admin\UsersController@profile')->name('user.profile.store');
-    Route::delete('/global-messages', 'Admin\MessagesController@deleteAllGlobalMessages');
 
     /**
     * Campaigns Routes
