@@ -78,7 +78,7 @@ class MessagesController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function delete($id) {
+    public function destroy($id) {
         $message = Message::findOrFail($id);
         if ($message->delete()) {
             return redirect()->route('messages.index')->with([
