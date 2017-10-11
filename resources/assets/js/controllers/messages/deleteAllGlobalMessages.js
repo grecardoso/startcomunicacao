@@ -3,4 +3,5 @@ function deleteAllGlobalMessages() {
         $('#delete-message-form').attr('action', '/global-messages');
         $('#delete-message-form').submit();
     }
+    console.log();
 }
