@@ -66,7 +66,7 @@
 
         @if( Auth::user()->category === 'ADMIN')
         <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="small-box bg-aqua">
+            <div class="small-box bg-aqua" style="background-color: #6f4f9a !important">
                 <div class="inner">
                     <h3>{{ count( $customers )  }}</h3>
 
