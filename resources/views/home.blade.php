@@ -172,7 +172,7 @@
                                                 AUDIO
                                             @endif
                                         </td>
-                                        <td> {{ (\DateTime::createFromFormat('Y-m-d', $campaign->date))->format('m-d-Y') }}</td>
+                                        <td> {{ (\DateTime::createFromFormat('Y-m-d', $campaign->date))->format('d-m-Y') }}</td>
                                         <td>{{ $campaign->user->name }}</td>
                                         <td></td>
                                     </tr>

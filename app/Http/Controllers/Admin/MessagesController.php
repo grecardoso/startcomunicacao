@@ -2,6 +2,7 @@
 
 namespace Hermes\Http\Controllers\Admin;
 
+use Hermes\Models\GlobalMessage;
 use Illuminate\Http\Request;
 use Hermes\Http\Controllers\Controller;
 
@@ -14,13 +15,15 @@ class MessagesController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index () {
-        $messages = Message::all();
+        $messages = Message::orderBy('id', 'desc')->get();
+        $global   = GlobalMessage::orderBy('id', 'desc')->get();
         $customers = User::where([
             ['category', 'CUSTOMER'],
             ['status', 'A']
         ])->orderBy('id', 'desc')->get();
 
         return view('messages.index', [
+            'global' => $global,
             'messages' => $messages,
             'customers' => $customers
         ]);
@@ -36,41 +39,17 @@ class MessagesController extends Controller
          * TODO: Disparar email para 'aviso de mensagem administrativa para usuário cliente'
          */
 
-        if ( $request->input('category') === 'GLOBAL') {
-            /**
-             * TODO: Criar tabela e controller separado para as mensagens globais. Retirar ela daqui.
-             */
-            $customers = User::where([
-                ['category', 'CUSTOMER'],
-                ['status', 'A']
-            ])->orderBy('id', 'desc')->get();
-
-            foreach($customers as $customer) {
-                $message = new Message();
-                $message->to = $customer->id;
-                $message->from = $request->input('from');
-                $message->title = $request->input('title');
-                $message->content = $request->input('content');
-                $message->category = $request->input('category');
-                $message->save();
-            }
+        $message = Message::create( $request->all() );
+        if ($message->save()) {
             return redirect()->route('messages.index')->with([
                 'msg' => 'Mensagem criada com sucesso',
                 'status' => 'success'
             ]);
         } else {
-            $message = Message::create( $request->all() );
-            if ($message->save()) {
-                return redirect()->route('messages.index')->with([
-                    'msg' => 'Mensagem criada com sucesso',
-                    'status' => 'success'
-                ]);
-            } else {
-                return redirect()->route('messages.index')->with([
-                    'msg' => 'Ocorreu um erro no processo. Tente novamente.',
-                    'status' => 'error'
-                ]);
-            }
+            return redirect()->route('messages.index')->with([
+                'msg' => 'Ocorreu um erro no processo. Tente novamente.',
+                'status' => 'error'
+            ]);
         }
     }
 
@@ -91,13 +70,5 @@ class MessagesController extends Controller
                 'status' => 'error'
             ]);
         }
-    }
-
-    public function deleteAllGlobalMessages() {
-        Message::where('category', '=', 'GLOBAL')->delete();
-        return redirect()->route('messages.index')->with([
-            'msg' => 'Mensagem Deletada com sucesso!',
-            'status' => 'success'
-        ]);
     }
 }

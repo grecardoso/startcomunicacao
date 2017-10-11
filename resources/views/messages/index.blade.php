@@ -44,12 +44,6 @@
                     <button  class="btn btn-primary" data-toggle="modal" data-target="#message-add-form-modal" style="margin-bottom: 12px;">
                         <i class="fa fa-fw fa-plus"></i> Cadastrar mensagem
                     </button>
-                    @if( count($messages) )
-                        <button  class="btn btn-danger" style="margin-bottom: 12px;" onclick="deleteAllGlobalMessages()">
-                            <i class="fa fa-fw fa-trash"></i> Deletar Globais
-                        </button>
-                    @endif
-
                     <table id="messages-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
@@ -91,6 +85,46 @@
                     </table>
                 </div>
             </div>
+
+            <div class="box box-warning">
+                <div class="box-header">
+                    <h3 class="box-title">Mensagens Globais</h3>
+                </div>
+                <div class="box-body">
+                    <button  class="btn btn-warning" data-toggle="modal" data-target="#global-message-add-form-modal" style="margin-bottom: 12px;">
+                        <i class="fa fa-fw fa-globe"></i> Mensagem Global
+                    </button>
+                    <table id="global-messages-table" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <td>Titulo</td>
+                            <td></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach( $global as $message )
+                                <tr>
+                                    <td>{{ $message->title }}</td>
+
+                                    <td class="text-right">
+                                        <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                            <button type"button" class="btn btn-warning"
+                                            data-toggle="collapse" data-target="#message-{{ $message->id }}"
+                                            aria-expanded="false" aria-controls="#message-{{ $message->id }}">
+                                            <i class="fa fa-fw fa-plus"></i>exibir
+                                            </button>
+                                        </div>
+
+                                        <button type"button" class="btn btn-xs btn-danger" onclick="deleteGlobalMessage({{ $message->id }})">
+                                            <i class="fa fa-fw fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -99,7 +133,9 @@
         {{ method_field('DELETE') }}
     </form>
 
-@include('messages.includes.add_form')
+    @include('messages.includes.add_form')
+    @include('messages.includes.add_global_form')
+
 @stop
 
 @section('js')
@@ -117,12 +153,26 @@
       'ordering'    : true,
       'info'        : true,
       'autoWidth'   : false
-    })
+    });
+
+      $('#global-messages-table').DataTable({
+          'language': {
+              'url': '//cdn.datatables.net/plug-ins/1.10.16/i18n/Portuguese-Brasil.json'
+          },
+
+          'paging'      : true,
+          'lengthChange': false,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : false
+      })
   })
 
   // Replace the <textarea id="editor1"> with a CKEditor
   // instance, using default configuration.
   CKEDITOR.replace( 'message-content' );
+  CKEDITOR.replace( 'global-message-content' );
 </script>
 <script src="{{ asset('js/app.js') }}"></script>
 @stop

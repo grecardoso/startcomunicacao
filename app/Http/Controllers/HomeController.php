@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Hermes\User;
 use Hermes\Models\Campaign;
-use Hermes\Models\Message;
+use Hermes\Models\GlobalMessage;
 use Hermes\Models\Report;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,7 +60,7 @@ class HomeController extends Controller
                 ['status','=','D'],
                 ['user_id', '=', Auth::user()->id]
             ])->orderBy('id', 'desc')->count();
-            $messages = Message::where('category', '=', 'GLOBAL')->orderBy('id', 'desc')->get();
+            $messages = GlobalMessage::orderBy('id', 'desc')->get();
         }
 
         return view('home',[

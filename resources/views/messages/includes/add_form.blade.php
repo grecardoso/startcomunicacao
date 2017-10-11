@@ -11,20 +11,11 @@
                 <form id="message-add-form" action="{{ route('messages.store') }}" method="POST" >
                     {{ csrf_field() }}
                     <input type="hidden" value="{{ Auth::user()->id}}" name="from">
-                    <div class="form-group">
-                        <label for="message-category">Tipo</label>
-                        <div class="input-group">
-                            <select class="form-control" id="message-category" name="category" required>
-                                <option>SELECIONE UM TIPO</option>
-                                <option value="GLOBAL">GLOBAL</option>
-                                <option value="PERSONAL">PESSOAL</option>
-                            </select>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <label for="message-customers">Cliente</label>
                         <div class="input-group">
-                            <select class="form-control" id="message-customers" name="to">
+                            <select class="form-control" id="message-customers" name="to" required>
                                 <option>SELECIONE UM CLIENTE</option>
                                 @foreach( $customers as $list )
                                     <option value="{{ $list->id }}">{{ $list->name }}</option>

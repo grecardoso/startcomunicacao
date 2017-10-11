@@ -19,7 +19,6 @@ Route::get('/', function() {
 
 Route::group(['middleware' => ['auth', 'auth.approved']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/global-messages', 'Admin\MessagesController@deleteAllGlobalMessages');
     
     /**
     * Users Routes
@@ -30,6 +29,12 @@ Route::group(['middleware' => ['auth', 'auth.approved']], function() {
             Route::post('/', 'BlacklistController@store')->name('blacklist.store');
             Route::delete('/remove-all-dates', 'BlacklistController@destroyAllDates')->name('blacklist.destroyAllDates');
             Route::delete('/{id}', 'BlacklistController@destroy')->name('blacklist.destroy');
+        });
+
+        Route::prefix('global-messages')->group( function () {
+            Route::post("/", 'GlobalMessagesController@store')->name('global-messages.store');
+            Route::delete("/all", "GlobalMessagesController@destroyAll")->name('global-messages.destroy.all');
+            Route::delete("/{message}", 'GlobalMessagesController@destroy')->name('global-messages.destroy');
         });
 
         Route::resource('users', 'UsersController')->only(['index', 'update', 'destroy', 'store']);
