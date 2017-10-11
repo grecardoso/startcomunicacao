@@ -44,11 +44,11 @@
                     <button  class="btn btn-primary" data-toggle="modal" data-target="#message-add-form-modal" style="margin-bottom: 12px;">
                         <i class="fa fa-fw fa-plus"></i> Cadastrar mensagem
                     </button>
-                    @isset( $messages )
+                    @if( count($messages) )
                         <button  class="btn btn-danger" style="margin-bottom: 12px;" onclick="deleteAllGlobalMessages()">
                             <i class="fa fa-fw fa-trash"></i> Deletar Globais
                         </button>
-                    @endisset
+                    @endif
 
                     <table id="messages-table" class="table table-bordered table-hover">
                         <thead>
