@@ -37,7 +37,9 @@ class MessagesController extends Controller
          */
 
         if ( $request->input('category') === 'GLOBAL') {
-
+            /**
+             * TODO: Criar tabela e controller separado para as mensagens globais. Retirar ela daqui.
+             */
             $customers = User::where([
                 ['category', 'CUSTOMER'],
                 ['status', 'A']
