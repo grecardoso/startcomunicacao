@@ -70,7 +70,7 @@
                                         <a role="button" class="btn btn-xs btn-primary" href="{{ route('campaigns.number-lists.download',['number_list' => $list->id]) }}">
                                             <i class="fa fa-fw fa-download"></i>Download
                                         </a>
-                                        <button type"button" class="btn btn-xs btn-danger" onclick="deleteNumberList({{ $list->id }})">
+                                        <button type=button" class="btn btn-xs btn-danger" onclick="deleteNumberList({{ $list->id }})">
                                             <i class="fa fa-fw fa-trash"></i>
                                         </button>
                                     </td>
