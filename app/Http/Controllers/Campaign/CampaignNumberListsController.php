@@ -65,7 +65,7 @@ class CampaignNumberListsController extends Controller
         $list = CampaignNumberList::findOrFail($id);
 
         if ( count( $list->campaigns ) ) {
-            redirect()->route('campaigns.number-lists.index')->with([
+            return redirect()->route('campaigns.number-lists.index')->with([
                 'msg' => "Lista utilizada em campanhas. Não poderá ser deletada",
                 'status' => 'error'
             ]);
